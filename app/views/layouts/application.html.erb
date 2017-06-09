@@ -9,6 +9,30 @@
   </head>
 
   <body>
+    <!-- nav bar -->
+    <header id="top-bar" class="top-bar" data-topbar>
+      <aside class="main-user-bar">
+        <h1 class="left"><%= link_to "Terpsichore", root_path %></h1>
+
+        <ul class="right">
+          <% if user_signed_in? %>
+            <li><%= link_to current_user.user_name, user_path(current_user.id) %></li>
+            <li><%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %></li>
+            <li id='user-id' class='hidden-all'><%= current_user.id %></li>
+          <% else %>
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <li><%= link_to "Sign In", new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </aside>
+    </header>
+
+    <!-- flash messages -->
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <!-- main content -->
     <%= yield %>
+
   </body>
 </html>

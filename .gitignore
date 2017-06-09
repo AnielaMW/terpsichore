@@ -19,3 +19,7 @@
 .byebug_history
 /public/packs
 /node_modules
+
+# Coveralls is for "Test Coverage History & Statistics."
+/coverage
+.env

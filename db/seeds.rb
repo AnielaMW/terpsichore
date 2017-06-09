@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require_relative 'seeders/user_seeder'
+
+if Rails.env.development?
+  UserDevSeeder.seed!
+end
+
+if Rails.env.production?
+  UserDevSeeder.seed!
+end
