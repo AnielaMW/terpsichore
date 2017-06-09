@@ -1,12 +1,12 @@
 source 'https://rubygems.org/'
 ruby '2.4.1'
 
-gem 'pg', '~> 0.18'
-gem 'rails', '~> 5.1.1'
-gem 'puma', '~> 3.0'
 gem 'devise'
-gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
+gem 'pg', '~> 0.18'
+gem 'puma', '~> 3.0'
+gem 'rails', '~> 5.1.1'
+gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker', '~> 2.0'
 
