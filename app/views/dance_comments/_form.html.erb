@@ -1,0 +1,20 @@
+<%= form_for [@dance, @dance_comment] do |f| %>
+  <div id="dcform" class="forms">
+    <div class="field">
+      <%= f.label :comment_type_id, "Type" %>
+      <%= f.collection_select :comment_type_id, @comment_type_collection, :id, :name, required: true %>
+      <div class="ref-button">
+        <%= link_to "?", comment_types_path, target: '_blank' %>
+      </div>
+    </div>
+
+    <div class="field hidden-label">
+      <%= f.label :comment, "Comment" %>
+      <%= f.text_area :comment, required: true, placeholder: "Comment..." %>
+    </div>
+
+    <div id="actions" class="actions">
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+<%= form_for(@key) do |f| %>
+  <div class="forms">
+    <div class="field hidden-label">
+      <%= f.label :name, "Name" %>
+      <%= f.text_field :name, required: true, placeholder: "Formation..."  %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>

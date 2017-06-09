@@ -1,0 +1,21 @@
+<main class="tempo-index">
+  <header>
+    <% if @admin_user %>
+      <ul class="user-bar">
+        <li><%= link_to 'Create New Tempo', new_tempo_path %></li>
+      </ul>
+    <% end %>
+    
+    <h1>Tempos</h1>
+  </header>
+
+  <ul class="info-list">
+    <% @tempos.each do |tempo| %>
+      <li>
+        <article class="tempo-box">
+          <h3><%= link_to tempo.name, tempo_path(tempo) %> <bdi>- <%= tempo.description %></bdi></h3>
+        </article>
+      </li>
+    <% end %>
+  </ul>
+</main>

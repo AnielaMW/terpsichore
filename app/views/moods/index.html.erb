@@ -1,0 +1,18 @@
+<main class="mood-index">
+  <header>
+    <ul class="user-bar">
+      <li><%= link_to 'Create New Mood', new_mood_path %></li>
+    </ul>
+    <h1>Moods</h1>
+  </header>
+
+  <ul class="info-list">
+    <% @moods.each do |mood| %>
+      <li>
+        <article class="mood-box">
+          <h3><%= link_to mood.name, mood_path(mood) %> </h3>
+        </article>
+      </li>
+    <% end %>
+  </ul>
+</main>

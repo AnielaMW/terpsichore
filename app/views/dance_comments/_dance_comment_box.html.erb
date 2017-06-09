@@ -1,0 +1,17 @@
+<article class="comment-box">
+  <h3>
+    <%= link_to dc.user.user_name, user_path(dc.user) %> posted a <%= link_to dc.comment_type.name, comment_type_path(dc.comment_type) %> for <%= link_to dc.dance.title, dance_path(dc.dance) %>
+  </h3>
+  <p><%= link_to dc.comment, dance_comment_path(dc) %></p>
+
+  <footer>
+    <ul>
+      <% if dc.creator?(current_user) %>
+        <li><%= link_to "Edit", edit_dance_comment_path(dc) %></li>
+      <% end %>
+      <% if dc.creator?(current_user) || dc.dance.creator?(current_user) || @admin_user %>
+        <li><%= link_to 'Delete', dc, method: :delete, data: { confirm: 'Are you sure?' }, :class => "remove-comment" %></li>
+      <% end %>
+    </ul>
+  </footer>
+</article>

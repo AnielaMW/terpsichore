@@ -1,0 +1,13 @@
+<main class="dance_level-show">
+  <% if @admin_user %>
+    <aside>
+      <ul class="user-bar">
+        <li><%= link_to 'Edit', edit_dance_level_path(@dance_level) %></li>
+        <li><%= link_to 'Delete', @dance_level, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+    </aside>
+  <% end %>
+
+  <h2><%= @dance_level.name %></h2>
+  <p><%= @dance_level.description %></p>
+</main>

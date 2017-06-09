@@ -1,0 +1,13 @@
+<main class="tempo-show">
+  <% if @admin_user %>
+    <aside>
+      <ul class="user-bar">
+        <li><%= link_to 'Edit', edit_tempo_path(@tempo) %></li>
+        <li><%= link_to 'Delete', @tempo, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+    </aside>
+  <% end %>
+
+  <h2><%= @tempo.name %></h2>
+  <p><%= @tempo.description %></p>
+</main>

@@ -1,0 +1,13 @@
+<main class="dance-comment-index">
+  <header>
+    <h2>Dance Comments</h2>
+  </header>
+
+  <ul class="dance-comment-list">
+    <% @dance_comments.each do |dc| %>
+      <li>
+        <%= render 'dance_comment_box', dc: dc %>
+      </li>
+    <% end %>
+  </ul>
+</main>

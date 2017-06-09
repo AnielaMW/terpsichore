@@ -1,0 +1,109 @@
+<main id='dance-show' class='dance-show'>
+  <header>
+    <ul class='user-bar'>
+      <% if @dance.creator?(current_user) || @admin_user %>
+        <li><%= link_to 'Delete', @dance, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <li><%= link_to 'Edit', edit_dance_path(@dance) %></li>
+      <% end %>
+      <li>Created by: <%= link_to @dance.user.user_name, user_path(@dance.user_id) %></li>
+    </ul>
+    <p id='dance-id' class='hidden-all'><%= @dance.id %></p>
+
+    <h2><%= @dance.title %>
+      <% if @dance.year %>
+        <bdi>(<%= @dance.year %>)</bdi>
+      <% end %>
+    </h2>
+  </header>
+
+  <div class="d-info-field left">
+    <h6>Formation: </h6>
+    <p><%= link_to @dance.formation.name, formation_path(@dance.formation) %></p>
+  </div>
+
+  <div class="d-info-field right">
+    <h6>Meter: </h6>
+    <p><%= link_to @dance.meter.name, meter_path(@dance.meter) %></p>
+  </div>
+
+  <% if @dance.tempo && @dance.tempo != "" %>
+    <div class="d-info-field left">
+      <h6>Tempo: </h6>
+      <p><%= link_to @dance.tempo.name, tempo_path(@dance.tempo) %></p>
+    </div>
+  <% end %>
+
+  <% if @dance.key && @dance.key != "" %>
+    <div class="d-info-field right">
+      <h6>Key: </h6>
+      <p><%= link_to @dance.key.name, key_path(@dance.key) %></p>
+    </div>
+  <% end %>
+
+  <% if @dance.dance_level && @dance.dance_level != "" %>
+    <div class="d-info-field left">
+      <h6>Level: </h6>
+      <p><%= link_to @dance.dance_level.name, dance_level_path(@dance.dance_level) %></p>
+    </div>
+  <% end %>
+
+  <% if @dance.moods && @dance.moods != "" %>
+    <div class="d-info-field right">
+      <h6>Moods: </h6>
+        <ul>
+          <% @dance.moods.each do |mood| %>
+            <li><%= link_to mood.name, mood_path(mood) %></li>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
+
+  <% if @dance.choreographer && @dance.choreographer != "" %>
+    <div class="d-info-field left">
+      <h6>Choreographer: </h6>
+      <p><%= @dance.choreographer %></p>
+    </div>
+  <% end %>
+
+  <% if @dance.publication && @dance.publication != "" %>
+    <div class="d-info-field right">
+      <h6>Publication: </h6>
+      <p><%= @dance.publication %></p>
+    </div>
+  <% end %>
+
+
+  <table class='dance-info'>
+    <tr>
+      <td>
+        <h6>Directions</h6>
+      </td>
+      <td></td>
+      <% if @dance.dance_directions %>
+        <%= render 'dance_directions/dance_direction_table', dance: @dance, dds: @dance_directions %>
+      <% end %>
+    </tr>
+  </table>
+
+  <section id='comments' class='comments'>
+    <header>
+      <h3>Comments</h3>
+      <%= link_to 'Create Comment', new_dance_dance_comment_path(@dance) %>
+      <% if current_user %>
+        <form id='dc-form'>
+          <%= render 'dance_comments/form', dance: @dance, dance_comment: @dance_comment %>
+        </form>
+      <% end %>
+    </header>
+
+    <% if @dance.dance_comments %>
+      <ul id='dance-comment-list' class='dance-comment-list'>
+        <% @dance_comments.each do |dc| %>
+          <li>
+            <%= render 'dance_comments/dance_comment_box', dc: dc %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </section>
+</main>

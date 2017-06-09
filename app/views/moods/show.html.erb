@@ -1,0 +1,12 @@
+<main class="mood-show">
+  <% if @admin_user %>
+    <aside>
+      <ul class="user-bar">
+        <li><%= link_to 'Edit', edit_mood_path(@mood) %></li>
+        <li><%= link_to 'Delete', @mood, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+    </aside>
+  <% end %>
+
+  <h2><%= @mood.name %></h2>
+</main>
