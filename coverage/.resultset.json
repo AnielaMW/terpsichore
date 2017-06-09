@@ -22,6 +22,109 @@
         1,
         null
       ],
+      "/Users/Aniela/challenges/Capstone/terpsichore/app/models/comment_type.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/Aniela/challenges/Capstone/terpsichore/app/models/dance_comment.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/Aniela/challenges/Capstone/terpsichore/app/models/dance_direction.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/Aniela/challenges/Capstone/terpsichore/app/models/dance_level.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/Aniela/challenges/Capstone/terpsichore/app/models/dance.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/Aniela/challenges/Capstone/terpsichore/app/models/formation.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/Aniela/challenges/Capstone/terpsichore/app/models/key.rb": [
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/Aniela/challenges/Capstone/terpsichore/app/models/meter.rb": [
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/Aniela/challenges/Capstone/terpsichore/app/models/mood.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/Aniela/challenges/Capstone/terpsichore/app/models/tempo.rb": [
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
       "/Users/Aniela/challenges/Capstone/terpsichore/app/controllers/users_controller.rb": [
         1,
         1,
@@ -96,8 +199,14 @@
         0,
         0,
         0
+      ],
+      "/Users/Aniela/challenges/Capstone/terpsichore/app/models/dance_mood.rb": [
+        0,
+        0,
+        0,
+        0
       ]
     },
-    "timestamp": 1497040227
+    "timestamp": 1497041550
   }
 }
