@@ -1,0 +1,12 @@
+<main class="user-show">
+  <header>
+    <ul class="user-bar">
+      <li><%= link_to "Edit Profile", edit_user_registration_path(@user) %></li>
+    </ul>
+    <h2><%= @user.user_name %></h2>
+  </header>
+
+  <div class="bottom-line">
+    <p>Last signed in on <%= @user.last_sign_in_at %></p>
+  </div>
+</main>
