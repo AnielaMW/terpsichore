@@ -73,7 +73,6 @@
         26,
         null,
         null,
-        null,
         null
       ],
       "/Users/Aniela/challenges/Capstone/terpsichore/app/channels/application_cable/channel.rb": [
@@ -99,6 +98,6 @@
         0
       ]
     },
-    "timestamp": 1497034820
+    "timestamp": 1497040227
   }
 }
