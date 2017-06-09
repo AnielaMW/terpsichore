@@ -18,7 +18,7 @@ class DanceDirectionsController < ApplicationController
       :sequence,
       :mark,
       :measure,
-      :direction,
+      :movement,
       :position
     )
   end
