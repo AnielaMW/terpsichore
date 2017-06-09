@@ -1,43 +1,125 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<main class="forms">
+  <ul class='user-bar'>
+    <li><%= link_to "Back", :back %></li>
+  </ul>
+  <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <div class="forms">
+      <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+      <div class="field short">
+        <%= f.label :first_name, "First Name" %><br />
+        <%= f.text_field :first_name, autofocus: true, required: true %>
+      </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <div class="field short">
+        <%= f.label :last_name, "Last Name" %><br />
+        <%= f.text_field :last_name, autofocus: true, required: true %>
+      </div>
+
+      <div class="field short">
+        <%= f.label :username, "Username" %><br />
+        <%= f.text_field :username, autofocus: true %>
+      </div>
+
+      <div class="field medium">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, required: true %>
+      </div>
+
+      <div class="field medium">
+        <%= f.label :location %><i>(City, State, Country, or Planet only please)</i><br />
+        <%= f.text_field :location, autofocus: true %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <!-- How do I get checkboxes and radios to "pre-check" based on the existing values at the start of the form? -->
+
+      <fieldset>
+        <legend>I am a...</legend>
+        <div class="line-up"><input type="checkbox" name="dancer" value=true><p> Dancer</p></div>
+        <div class="line-up"><input type="checkbox" name="caller" value="true"><p> Caller</p></div>
+        <div class="line-up"><input type="checkbox" name="musician" value="true"><p> Musician</p></div>
+        <div class="line-up"><input type="checkbox" name="band" value="true"><p> Band</p></div>
+        <div class="line-up"><input type="checkbox" name="choreographer" value="true"><p> Choreographer</p></div>
+        <div class="line-up"><input type="checkbox" name="composer" value="true"><p> Composer</p></div>
+        <div class="field text_field">
+          <%= f.text_area :about, spellcheck: true, placeholder: "About me..." %>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Privacy Information:</legend>
+        <h1>Use your...</h1>
+        <div>
+          <p>First Name</p>
+          <input type="radio" name="privacy1" value="false">
+          <p>Username </p>
+          <i>(must enter a username above)</i>
+          <input type="radio" name="privacy1" value="true">
+        </div>
+        <h1>Share your...</h1>
+        <div class="line-up">
+          <p>First Name? </p>
+          <p>Yes</p>
+          <input type="radio" name="privacy2" value="true">
+          <p>No</p>
+          <input type="radio" name="privacy2" value="false">
+        </div>
+        <div class="line-up">
+          <p>Last Name? </p>
+          <p>Yes</p>
+          <input type="radio" name="privacy3" value="true">
+          <p>No</p>
+          <input type="radio" name="privacy3" value="false">
+        </div>
+        <div class="line-up">
+          <p>Email? </p>
+          <p>Yes</p>
+          <input type="radio" name="privacy4" value="true">
+          <p>No</p>
+          <input type="radio" name="privacy4" value="false">
+        </div>
+        <div class="line-up">
+          <p>Location? </p>
+          <p>Yes</p>
+          <input type="radio" name="privacy5" value="true">
+          <p>No</p>
+          <input type="radio" name="privacy5" value="false">
+        </div>
+      </fieldset>
+
+      <div class="field short">
+        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+        <% if @minimum_password_length %>
+          <br />
+          <em><%= @minimum_password_length %> characters minimum</em>
+        <% end %>
+      </div>
+
+      <div class="field short">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
+      <div class="field short">
+        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.password_field :current_password, autocomplete: "off", required: true %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Update" %>
+      </div>
+    </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+  <div class="forms">
+    <h3>Unhappy?</h3>
+    <%= button_to "Cancel My Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "ref-button" %>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</main>
