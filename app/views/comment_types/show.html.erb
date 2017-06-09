@@ -1,0 +1,13 @@
+<main class="comment-type-show">
+  <% if @admin_user %>
+    <header>
+      <ul class="user-bar">
+        <li><%= link_to 'Edit', edit_comment_type_path(@comment_type) %></li>
+        <li><%= link_to 'Delete', @comment_type, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+    </header>
+  <% end %>
+
+  <h2><%= @comment_type.name %></h2>
+  <p><%= @comment_type.description %></p>
+</main>

@@ -1,0 +1,31 @@
+<article class="dance-box">
+  <section>
+    <h2><%= link_to dance.title, dance_path(dance) %>
+      <% if dance.year %>
+        <bdi>(<%= dance.year %>)</bdi>
+      <% end %>
+    </h2>
+  </section>
+
+  <section>
+    <!-- the name of the song -->
+  </section>
+
+  <section>
+    <% if dance.choreographer && dance.choreographer != "" %>
+      <p><bdi>Choreographed by:</bdi> <%= dance.choreographer %></p>
+    <% end %>
+    <p><bdi>Created by:</bdi> <%= link_to dance.user.user_name, user_path(dance.user_id) %></p>
+  </section>
+
+  <footer>
+    <ul>
+      <% if dance.creator?(current_user) %>
+        <li><%= link_to "Edit", edit_dance_path(dance) %></li>
+      <% end %>
+      <% if dance.creator?(current_user) || @admin_user %>
+        <li><%= link_to 'Delete', dance, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      <% end %>
+    </ul>
+  </footer>
+</article>

@@ -1,0 +1,13 @@
+<main class="formation-show">
+  <% if @admin_user %>
+    <aside>
+      <ul class="user-bar">
+        <li><%= link_to 'Edit', edit_formation_path(@formation) %></li>
+        <li><%= link_to 'Delete', @formation, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+    </aside>
+  <% end %>
+
+  <h2><%= @formation.name %></h2>
+  <p><%= @formation.description %></p>
+</main>

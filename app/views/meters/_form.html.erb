@@ -1,0 +1,16 @@
+<%= form_for(@meter) do |f| %>
+  <div class="forms">
+    <div class="field hidden-label">
+      <%= f.label :name, "Name" %>
+      <%= f.text_field :name, required: true, placeholder: "Meter..." %>
+    </div>
+
+    <div class="field hidden-label">
+      <%= f.label :description, "Description" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>

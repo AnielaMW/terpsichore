@@ -1,0 +1,21 @@
+<main class="dance_level-index">
+  <header>
+    <% if @admin_user %>
+      <ul class="user-bar">
+        <li><%= link_to 'Create New Level', new_dance_level_path %></li>
+      </ul>
+    <% end %>
+    
+    <h1>Dance Levels</h1>
+  </header>
+
+  <ul class="info-list">
+    <% @dance_levels.each do |dance_level| %>
+      <li>
+        <article class="dance_level-box">
+          <h3><%= link_to dance_level.name, dance_level_path(dance_level) %> <bdi>- <%= dance_level.description %></bdi></h3>
+        </article>
+      </li>
+    <% end %>
+  </ul>
+</main>

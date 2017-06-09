@@ -1,0 +1,12 @@
+<main class="key-show">
+  <% if @admin_user %>
+    <aside>
+      <ul class="user-bar">
+        <li><%= link_to 'Edit', edit_key_path(@key) %></li>
+        <li><%= link_to 'Delete', @key, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
+    </aside>
+  <% end %>
+
+  <h2><%= @key.name %></h2>
+</main>

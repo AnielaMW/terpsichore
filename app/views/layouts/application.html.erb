@@ -27,6 +27,22 @@
       </aside>
     </header>
 
+    <!-- top nav bar -->
+    <div class="top-nav-bar">
+      <ul>
+        <li><%= link_to "Members", users_path %></li>
+        <li><%= link_to "Dances", dances_path %></li>
+        <li><%= link_to "Comments", dance_comments_path %></li>
+        <li><%= link_to "Comment Types", comment_types_path %></li>
+        <li><%= link_to "Formations", formations_path %></li>
+        <li><%= link_to "Levels", dance_levels_path %></li>
+        <li><%= link_to "Keys", keys_path %></li>
+        <li><%= link_to "Meters", meters_path %></li>
+        <li><%= link_to "Moods", moods_path %></li>
+        <li><%= link_to "Tempos", tempos_path %></li>
+      </ul>
+    </div>
+
     <!-- flash messages -->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

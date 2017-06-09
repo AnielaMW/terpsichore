@@ -1,0 +1,18 @@
+<main class="key-index">
+  <header>
+    <ul class="user-bar">
+      <li><%= link_to 'Create New Key', new_key_path %></li>
+    </ul>
+    <h1>Keys</h1>
+  </header>
+
+  <ul class="info-list">
+    <% @keys.each do |key| %>
+      <li>
+        <article class="key-box">
+          <h3><%= link_to key.name, key_path(key) %></h3>
+        </article>
+      </li>
+    <% end %>
+  </ul>
+</main>

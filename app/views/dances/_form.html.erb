@@ -1,0 +1,105 @@
+<%= form_for @dance do |f| %>
+  <div id="forms" class="forms" spellcheck="true">
+    <form id="d-dd-form">
+
+      <div class="d-info-field left">
+        <%= f.label :title, "Title" %>
+        <%= f.text_field :title, required: true %>
+      </div>
+
+      <div class="d-info-field right year">
+        <%= f.label :year, "Year" %>
+        <%= f.text_field :year %>
+      </div>
+
+      <div class="d-info-field left chor">
+        <%= f.label :choreographer, "Choreographer" %>
+        <%= f.text_field :choreographer %>
+      </div>
+
+      <div class="d-info-field right pub">
+        <%= f.label :publication, "Publication" %>
+        <%= f.text_field :publication %>
+      </div>
+
+      <div class="d-info-field left">
+        <%= f.label :formation_id, "Formation" %>
+        <%= f.collection_select :formation_id, @formation_collection, :id, :name, required: true %>
+        <%= link_to "*", formations_path, target: '_blank', :class => "new-button" %>
+      </div>
+
+      <div class="d-info-field right">
+        <%= f.label :meter_id, "Meter" %>
+        <%= f.collection_select :meter_id, @meter_collection, :id, :name, required: true %>
+        <%= link_to "*", meters_path, target: '_blank', :class => "new-button" %>
+      </div>
+
+      <!-- Eventually need to be able to select blank as an option as these fields are not required -->
+      <div class="d-info-field left">
+        <%= f.label :key_id, "Key" %>
+        <%= f.collection_select :key_id, @key_collection, :id, :name %>
+        <%= link_to "*", keys_path, target: '_blank', :class => "new-button" %>
+      </div>
+
+      <div class="d-info-field right">
+        <%= f.label :tempo_id, "Tempo" %>
+        <%= f.collection_select :tempo_id, @tempo_collection, :id, :name %>
+        <%= link_to "*", tempos_path, target: '_blank', :class => "new-button" %>
+      </div>
+
+      <!-- Eventually want to be able to select one from a list of radio buttons rather than drop down. -->
+      <div class="d-info-field left">
+        <%= f.label :dance_level_id, "Level" %>
+        <%= f.collection_select :dance_level_id, @level_collection, :id, :name %>
+        <%= link_to "*", dance_levels_path, target: '_blank', :class => "new-button" %>
+      </div>
+
+      <!-- Eventually need to be able to select multiple MOODS from a list of radio buttons rather than drop down -->
+
+      <table>
+        <tr>
+          <table class="no-bord">
+            <tr>
+              <td>
+                <label>Directions</label>
+              </td>
+            </tr>
+          </table>
+        </tr>
+
+        <tr>
+          <table id="dd-form" class="dd-form">
+            <tr>
+              <th class="hidden-label">
+                <label for="sequence" class="seq">Sequence</label>
+              </th>
+              <th>
+                <label for="mark" class="mar">Mark</label>
+              </th>
+              <th>
+                <label for="measure" class="mea">Measure</label>
+              <th>
+                <label for="direction" class="dir">Movement</label>
+              <th>
+                <label for="position" class="pos">Position</label>
+              </th>
+            </tr>
+            <section id="dd-editable-list">
+              <% if @dance_directions %>
+                <% @dance_directions.each do |dd| %>
+                  <tr class="dd-editable">
+                    <%= render 'dance_directions/form', dd: dd %>
+                  </tr>
+                <% end %>
+              <% end %>
+            </section>
+            <section id="dd-new-list">
+            </section>
+          </table>
+        </table>
+
+        <button type="button" id="dd-add" class="ref-button">+</button>
+        <p class="actions"><%= f.submit %></p>
+    </form>
+  </div>
+<% end %>
