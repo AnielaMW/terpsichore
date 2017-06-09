@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :profiles
+    # should :profiles be namespaced
   end
   resources :dances do
     resources :dance_comments, only: [:new, :create]
