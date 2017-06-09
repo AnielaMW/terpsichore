@@ -31,7 +31,7 @@ feature 'views users list', %{
     expect(names[2]).to have_content(will.user_name)
   end
 
-  scenario 'fail to view member list with unauthenticated user' do
+  pending 'fail to view member list with unauthenticated user' do
     visit users_path
 
     expect(page).to have_content("sign in or sign up before continuing.")
