@@ -42,7 +42,6 @@ submitDDDClick = (event) => {
   createDance = (response) => {
     newDan.newId(response);
     dividNewDirections(dirListAdd, newDan);
-    console.log(newDan.id);
     window.location = `/dances/${newDan.id}`;
   };
 
