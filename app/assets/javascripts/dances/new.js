@@ -15,7 +15,7 @@ class NewDance{
   }
 
   newId(json) {
-    this.id = json[0].id;
+    this.id = json.id;
   }
 }
 

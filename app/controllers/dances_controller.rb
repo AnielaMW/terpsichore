@@ -86,7 +86,6 @@ class DancesController < ApplicationController
     params.require(:dance).permit(
       :id,
       :title,
-      :music,
       :choreographer,
       :publication,
       :year,
@@ -94,7 +93,8 @@ class DancesController < ApplicationController
       :formation_id,
       :key_id,
       :meter_id,
-      :tempo_id
+      :tempo_id,
+      :user_id
     )
   end
 end
