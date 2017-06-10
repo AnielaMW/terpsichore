@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Terpsichore</title>
+    <title>ECD db</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
   <body>
     <!-- nav bar -->
     <header id="top-bar" class="top-bar" data-topbar>
       <aside class="main-user-bar">
-        <h1 class="left"><%= link_to "Terpsichore", root_path %></h1>
+        <h1 class="left"><%= link_to "ECDdb", root_path %></h1>
 
         <ul class="right">
           <% if user_signed_in? %>
@@ -50,5 +49,9 @@
     <!-- main content -->
     <%= yield %>
 
+
+    <footer class="bottom-bar">
+      <h1>Dance like no one is watching.</h1>
+    </footer>
   </body>
 </html>
