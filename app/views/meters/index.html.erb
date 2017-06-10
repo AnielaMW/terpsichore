@@ -10,7 +10,7 @@
     <% @meters.each do |meter| %>
       <li>
         <article class="meter-box">
-          <h3><%= link_to meter.name, meter_path(meter) %> <bdi>- <%= meter.description %></bdi></h3>
+          <h3><%= link_to meter.name, meter_path(meter) %></h3>
         </article>
       </li>
     <% end %>
