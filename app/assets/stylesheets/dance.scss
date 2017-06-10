@@ -1,0 +1,109 @@
+@import "colors";
+
+h2 bdi {
+  font-size: 0.5em; // half; //
+  font-weight: normal;
+}
+
+// dance#index
+
+.dance-list li {
+  display: block;
+}
+
+.dance-box {
+  background: $color-white;
+  border: 3px solid $color-black;
+  margin: 5px;
+  padding-left: 1.4479638009049774%; // 20px; //
+  position: relative;
+
+  section {
+    p {
+      display: inline;
+      padding: 1.4479638009049774% 0.5791855203619909%; // 20px 8px; //
+    }
+
+    bdi {
+      font-size: 0.875em; // 14px; //
+    }
+  }
+
+  footer {
+    ul {
+      bottom: 0;
+      position: absolute;
+      right: 5px;
+    }
+
+    li {
+      display: inline;
+      font-size: 12px;
+      padding: 20px 8px;
+    }
+  }
+}
+
+// dance#show
+
+h6,
+p {
+  display: inline;
+  font-size: 1.2857em; // 18px; //
+}
+
+.dance-info {
+  border-collapse: collapse;
+  text-align: left;
+  vertical-align: top;
+  width: 100%;
+
+  td {
+    padding: 2px;
+  }
+
+  p {
+    display: inline;
+    font-size: 1.1428em; // 16px; //
+  }
+}
+
+.d-info-field {
+  width: 50%;
+}
+
+// dance forms
+.no-bord {
+  border: 0;
+  width: 100%;
+
+  label {
+    font-weight: bold;
+  }
+}
+
+//-------------------------------MEDIA QUERIES-------------------------------//
+//------------Dance Form Break-------------//
+@media only screen and (max-width: 820px) {
+
+  .forms {
+    .chor,
+    .pub {
+      float: none;
+      width: 100%;
+    }
+  }
+}
+
+//------------Dance Info Break-------------//
+@media only screen and (max-width: 650px) {
+
+  .forms,
+  .dance-show {
+    .left,
+    .right {
+      float: none;
+      width: 100%;
+    }
+  }
+}

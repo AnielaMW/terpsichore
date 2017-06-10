@@ -1,0 +1,16 @@
+@import "colors";
+
+// info lists include comment_types, formations, and meters
+
+.info-list {
+  padding-left: 25px;
+
+  h3 {
+    font-size: 1.2857em; // 18px; //
+  }
+
+  bdi {
+    font-size: 1.1428em; // 16px; //
+    font-weight: normal;
+  }
+}

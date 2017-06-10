@@ -1,0 +1,200 @@
+@import "colors";
+
+// Basic Sitewide CSS Styles
+.hidden-all {
+  display: none;
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: linear-gradient(to bottom, $color-med-grey, $color-white);
+  font-size: 87.5%; // 14px; //
+  width: 100%;
+}
+
+h1 {
+  font-size: 2.2em; // 30px; //
+  margin: 15px 0;
+}
+
+h2 {
+  font-size: 2em;  // 28px; //
+  margin: 10px 0;
+}
+
+h3 {
+  font-size: 1.8571em;  // 26px; //
+  margin: 5px 0;
+}
+
+h4 {
+  font-size: 1.7142em;  // 24px; //
+  margin: 3px 0;
+}
+
+h5 {
+  font-size: 1.5714em;  // 22px; //
+  margin: 2px 0;
+}
+
+h6 {
+  font-size: 1.4285em;  // 20px; //
+  margin: 1px 0;
+}
+
+p,
+label,
+input {
+  font-size: 1.1428em; // 16px; //
+}
+
+main {
+  padding: 0 2.040816%; // 0 20px; //
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #00008b;
+  text-decoration: underline;
+}
+
+header>a {
+  font-size: 0.8571em; // 12px; //
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+// Sitewide Header
+.top-bar {
+  background-color: $color-red;
+  border-bottom: 3px solid $color-black;
+  color: $color-white;
+  padding: 1.020408% 2.040816%; // 10px 20px; //
+  text-shadow: 1px 3px 1px $color-black;
+}
+
+header aside {
+  height: 60px;
+
+  h1 {
+    float: left;
+    padding-top: 1px;
+  }
+
+  ul {
+    float: right;
+    padding-top: 31px;
+  }
+
+  li {
+    display: inline;
+    font-size: 12px;
+    padding: 0 8px;
+  }
+}
+
+// Sitewide top nav bar
+.top-nav-bar {
+  text-align: center;
+  background-color: $color-red;
+  color: $color-white;
+  margin-bottom: 20px;
+  padding: 1.020408% 2.040816%; // 10px 20px; //
+  text-shadow: 1px 3px 1px $color-black;
+
+  li{
+    display: inline;
+    padding: 5px;
+    margin: 10px;
+  }
+}
+
+// Sitewide user bars
+.user-bar li {
+  display: inline;
+  float: right;
+  font-size: 12px;
+  margin-top: 14px;
+  padding-right: 8px;
+}
+
+// Sitewide bottom lines
+.bottom-line {
+  text-align: center;
+}
+
+// Sitewide Footer
+.bottom-bar {
+  background-color: $color-red;
+  border-top: 3px solid $color-black;
+  color: $color-white;
+  margin-top: 20px;
+  padding: 1.020408% 2.040816%; // 10px 20px; //
+  text-shadow: 1px 3px 1px $color-black;
+
+  h1 {
+    font-size: 1.4285em;  // 20px; //
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+  }
+}
+
+//-------------------------------MEDIA QUERIES-------------------------------//
+
+//--Tablet Portrait and Smart Phone Landscape--//
+@media only screen and (min-width: 500px) and (max-width: 850px) {
+
+  // Basic Sitewide CSS Styles
+  html {
+    font-size: 15px;
+  }
+
+  // Sitewide top nav bar
+  .top-nav-bar li{
+    margin: 5px;
+  }
+
+  // Sitewide Footer
+  .bottom-bar {
+    margin-top: 15px;
+  }
+}
+
+//------------Smart Phone Portrait-------------//
+@media only screen and (max-width: 499px) {
+
+  // Basic Sitewide CSS Styles
+  html {
+    font-size: 14px;
+  }
+
+  // Sitewide top nav bar
+  .top-nav-bar li{
+    margin: 0;
+  }
+
+  // Sitewide Footer
+  .bottom-bar {
+    margin-top: 10px;
+  }
+}
