@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ECD db</title>
+    <title>Terpsichore</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -11,7 +11,7 @@
     <!-- nav bar -->
     <header id="top-bar" class="top-bar" data-topbar>
       <aside class="main-user-bar">
-        <h1 class="left"><%= link_to "ECDdb", root_path %></h1>
+        <h1 class="left"><%= link_to "Terpsichore", root_path %></h1>
 
         <ul class="right">
           <% if user_signed_in? %>
@@ -34,8 +34,8 @@
         <li><%= link_to "Comments", dance_comments_path %></li>
         <li><%= link_to "Comment Types", comment_types_path %></li>
         <li><%= link_to "Formations", formations_path %></li>
-        <li><%= link_to "Levels", dance_levels_path %></li>
         <li><%= link_to "Keys", keys_path %></li>
+        <li><%= link_to "Levels", dance_levels_path %></li>
         <li><%= link_to "Meters", meters_path %></li>
         <li><%= link_to "Moods", moods_path %></li>
         <li><%= link_to "Tempos", tempos_path %></li>
