@@ -6,6 +6,32 @@
     <h2><%= @user.user_name %></h2>
   </header>
 
+  <% if @user.dances? %>
+    <section class="dances">
+      <h3>Dances</h3>
+      <ul class="dance-list">
+        <% @dances.each do |dance| %>
+        <li>
+          <%= render 'dances/dance_box', dance: dance %>
+        </li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+
+  <% if @user.dance_comments? %>
+    <section class="dance-comments">
+      <h3>Comments</h3>
+      <ul class="dance-comment-list">
+        <% @dance_comments.each do |dc| %>
+          <li>
+            <%= render 'dance_comments/dance_comment_box', dc: dc %>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+  <% end %>
+
   <div class="bottom-line">
     <p>Last signed in on <%= @user.last_sign_in_at %></p>
   </div>

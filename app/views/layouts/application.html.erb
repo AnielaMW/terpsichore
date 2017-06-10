@@ -7,7 +7,6 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
   <body>
     <!-- nav bar -->
     <header id="top-bar" class="top-bar" data-topbar>
@@ -35,8 +34,8 @@
         <li><%= link_to "Comments", dance_comments_path %></li>
         <li><%= link_to "Comment Types", comment_types_path %></li>
         <li><%= link_to "Formations", formations_path %></li>
-        <li><%= link_to "Levels", dance_levels_path %></li>
         <li><%= link_to "Keys", keys_path %></li>
+        <li><%= link_to "Levels", dance_levels_path %></li>
         <li><%= link_to "Meters", meters_path %></li>
         <li><%= link_to "Moods", moods_path %></li>
         <li><%= link_to "Tempos", tempos_path %></li>
@@ -50,5 +49,9 @@
     <!-- main content -->
     <%= yield %>
 
+
+    <footer class="bottom-bar">
+      <h1>Dance like no one is watching.</h1>
+    </footer>
   </body>
 </html>
