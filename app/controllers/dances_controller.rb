@@ -84,16 +84,14 @@ class DancesController < ApplicationController
 
   def dance_params
     params.require(:dance).permit(
-      :id,
       :title,
-      :music,
+      :formation_id,
+      :meter_id,
       :choreographer,
       :publication,
       :year,
-      :dance_level_id,
-      :formation_id,
       :key_id,
-      :meter_id,
+      :dance_level_id,
       :tempo_id
     )
   end
