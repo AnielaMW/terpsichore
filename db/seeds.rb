@@ -19,4 +19,8 @@ if Rails.env.development?
 end
 
 if Rails.env.production?
+  UserDevSeeder.seed!
+  DanceDevSeeder.seed!
+  DirectionDevSeeder.seed!
+  CommentTypeDevSeeder.seed!
 end
