@@ -15,10 +15,10 @@
 //= require rails-ujs
 //= require_tree .
 
-let appendTarget = (target, text) => {
-  target.append(text);
-};
-
-let prependTarget = (target, text) => {
-  target.prepend(text);
-};
+// let appendTarget = (target, text) => {
+//   target.append(text);
+// };
+//
+// let prependTarget = (target, text) => {
+//   target.prepend(text);
+// };
