@@ -22,7 +22,7 @@ class Api::DanceDirectionsController < ApplicationController
       :sequence,
       :mark,
       :measure,
-      :direction,
+      :movement,
       :position
     )
   end

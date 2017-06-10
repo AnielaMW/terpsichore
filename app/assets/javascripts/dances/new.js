@@ -15,7 +15,7 @@ class NewDance{
   }
 
   newId(json) {
-    this.id = json[0].id;
+    this.id = json.id;
   }
 }
 
@@ -42,6 +42,7 @@ submitDDDClick = (event) => {
   createDance = (response) => {
     newDan.newId(response);
     dividNewDirections(dirListAdd, newDan);
+    console.log(newDan.id);
     window.location = `/dances/${newDan.id}`;
   };
 
