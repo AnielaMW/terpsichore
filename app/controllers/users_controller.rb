@@ -7,8 +7,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    # @dances = list_dances
-    # @dance_comments = list_dcomments
+    @dances = list_dances
+    @dance_comments = list_dcomments
   end
 
   private
@@ -22,10 +22,10 @@ class UsersController < ApplicationController
   end
 
   def list_dances
-    # @user.dances.order(:title)
+    @user.dances.order(:title)
   end
 
   def list_dcomments
-    # @user.dance_comments.order(created_at: :desc)
+    @user.dance_comments.order(created_at: :desc)
   end
 end
