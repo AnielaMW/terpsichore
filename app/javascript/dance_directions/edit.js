@@ -1,4 +1,4 @@
-submitDDUpdate = (dd, newDan) => {
+let submitDDUpdate = (dd, newDan) => {
 
   let ddirection = {
     id: $('.dd-editable td.id input')[dd].value,
@@ -12,7 +12,7 @@ submitDDUpdate = (dd, newDan) => {
 
   newDD = new NewDanceDirection(ddirection);
 
-  saveDirections = () => {
+  let saveDirections = () => {
     $.ajax({
       method: 'PUT',
       url: `/api/dance_directions/$(dir[:id])`,

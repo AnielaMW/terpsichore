@@ -1,17 +1,17 @@
-dividUpdateDirections = (dds, newDan) => {
+let dividUpdateDirections = (dds, newDan) => {
   dds.each((dd) => {
     newDan.directions.push(submitDDUpdate(dd, newDan));
   });
 };
 
-submitDDDEditClick = (event) => {
+let submitDDDEditClick = (event) => {
   event.preventDefault();
 
   let dirListUpdate = $('tr.dd-editable');
   let dirListAdd = $('tr.dd-new');
   let newDan = new NewDance();
 
-  updateDance = () => {
+  let updateDance = () => {
     $.ajax({
       method: 'PUT',
       url: `/api/dances/${newDan.id}`,
@@ -19,7 +19,7 @@ submitDDDEditClick = (event) => {
     }).done(() => { createDance(); });
   };
 
-  createDance = () => {
+  let createDance = () => {
     dividNewDirections(dirListAdd, newDan);
     dividUpdateDirections(dirListUpdate, newDan);
     window.location = `/dances/${newDan.id}`;

@@ -32,20 +32,25 @@ class NewComment{
   }
 }
 
-submitDCClick = (event) => {
+let prependTarget = (target, text) => {
+  target.prepend(text);
+};
+
+let submitDCClick = (event) => {
   event.preventDefault();
 
   let newCom = new NewComment();
 
-  saveComment = () => {
+  let saveComment = () => {
     $.ajax({
       method: 'POST',
+      headers: { 'X-CSRF-Token' : $('#dc-form input[name=authenticity_token]').val() },
       url: '/api/dance_comments',
       data: {dance_comment: newCom}
     }).done((response) => { createComment(response);});
   };
 
-  createComment = (response) => {
+  let createComment = (response) => {
     newCom.info(response);
     prependTarget($('#dance-comment-list'), newCom.toHTML());
 

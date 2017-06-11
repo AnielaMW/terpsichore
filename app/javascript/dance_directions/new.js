@@ -15,7 +15,7 @@ class NewDanceDirection {
 }
 
 
-submitDDAdd = (dd, newDan) => {
+let submitDDAdd = (dd, newDan) => {
   let ddirection = {
     seqs: $('.dd-new td.seq input')[dd].value,
     mars: $('.dd-new td.mar input')[dd].value,
@@ -27,7 +27,7 @@ submitDDAdd = (dd, newDan) => {
 
   newDD = new NewDanceDirection(ddirection);
 
-  saveDirections = () => {
+  let saveDirections = () => {
     $.ajax({
       method: 'POST',
       url: '/api/dance_directions',
@@ -35,7 +35,7 @@ submitDDAdd = (dd, newDan) => {
     }).done((response) => { createDirection(response); });
   };
 
-  createDirection = (response) => {
+  let createDirection = (response) => {
     newDD.newId(response);
   };
 

@@ -7,12 +7,17 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-console.log('Hello World from Webpacker');
+//= require jquery
+//= require jquery_ujs
 
-let appendTarget = (target, text) => {
-  target.append(text);
-};
+import jQuery from 'jquery';
 
-let prependTarget = (target, text) => {
-  target.prepend(text);
-};
+window.jQuery = jQuery;
+
+import 'dance_comments/new';
+import 'dances/edit';
+import 'dances/new';
+import 'dance_directions/edit';
+import 'dance_directions/new';
+import 'dance_directions/add';
+import 'sitewide';

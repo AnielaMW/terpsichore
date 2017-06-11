@@ -19,19 +19,19 @@ class NewDance{
   }
 }
 
-dividNewDirections = (dds, newDan) => {
+let dividNewDirections = (dds, newDan) => {
   dds.each((dd) => {
     newDan.directions.push(submitDDAdd(dd, newDan));
   });
 };
 
-submitDDDClick = (event) => {
+let submitDDDClick = (event) => {
   event.preventDefault();
 
   let dirListAdd = $('tr.dd-new');
   let newDan = new NewDance();
 
-  saveDance = () => {
+  let saveDance = () => {
     $.ajax({
       method: 'POST',
       url: '/api/dances',
@@ -39,7 +39,7 @@ submitDDDClick = (event) => {
     }).done((response) => { createDance(response); });
   };
 
-  createDance = (response) => {
+  let createDance = (response) => {
     newDan.newId(response);
     dividNewDirections(dirListAdd, newDan);
     window.location = `/dances/${newDan.id}`;

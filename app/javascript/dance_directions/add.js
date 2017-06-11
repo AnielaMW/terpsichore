@@ -1,3 +1,7 @@
+let appendTarget = (target, text) => {
+  target.append(text);
+};
+
 addBlankDirection = () => {
   let newDDForm = `<tr class="dd-new">
   <td class="seq hidden-label">
