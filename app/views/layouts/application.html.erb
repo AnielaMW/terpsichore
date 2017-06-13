@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Terpsichore</title>
+    <title>My Terpsichore</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
+    <%= javascript_include_tag 'application' %>
+
   </head>
   <body>
     <!-- nav bar -->
     <header id="top-bar" class="top-bar" data-topbar>
       <aside class="main-user-bar">
-        <h1 class="left"><%= link_to "Terpsichore", root_path %></h1>
+        <h1 class="left"><%= link_to "My Terpsichore", root_path %></h1>
 
         <ul class="right">
           <% if user_signed_in? %>

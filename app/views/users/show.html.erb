@@ -1,8 +1,10 @@
 <main class="user-show">
   <header>
-    <ul class="user-bar">
-      <li><%= link_to "Edit Profile", edit_user_registration_path(@user) %></li>
-    </ul>
+    <% if @user == current_user %>
+      <ul class="user-bar">
+        <li><%= link_to "Edit Profile", edit_user_registration_path(@user) %></li>
+      </ul>
+    <% end %>
     <h2><%= @user.user_name %></h2>
   </header>
 

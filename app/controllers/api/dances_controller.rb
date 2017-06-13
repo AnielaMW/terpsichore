@@ -1,4 +1,8 @@
 class Api::DancesController < ApplicationController
+  # not the best solution, leaves the code open to attack. Use for now, but find a better solution.
+  # looks like CSRF token is problem.
+  skip_before_action :verify_authenticity_token
+  
   def create
     @dance = Dance.new(dance_params)
     @dance.save

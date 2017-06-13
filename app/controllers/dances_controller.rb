@@ -43,6 +43,9 @@ class DancesController < ApplicationController
   end
 
   def destroy
+    if directions?
+      @dance.dance_directions.destroy
+    end
     if comments?
       @dance.dance_comments.destroy
     end

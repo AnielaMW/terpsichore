@@ -5,3 +5,5 @@ let appendTarget = (target, text) => {
 let prependTarget = (target, text) => {
   target.prepend(text);
 };
+
+export { appendTarget, prependTarget };

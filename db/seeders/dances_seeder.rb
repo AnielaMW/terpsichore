@@ -38,7 +38,7 @@ class DanceDevSeeder
         tempo.update_attributes!(name: d_params["tempo"], description: "must change")
       end
 
-      user_id = 2
+      user_id = 3
 
       dance = Dance.find_or_initialize_by(title: d_params["title"])
 

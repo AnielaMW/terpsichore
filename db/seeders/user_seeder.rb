@@ -1,12 +1,19 @@
 class UserDevSeeder
   USERS = [
     {
+      first_name: "Computer",
+      last_name: "Non-user",
+      user_name: "Terpsichore",
+      email: "anyatravian@gmail.com",
+      password: "12041980",
+      admin: true
+    }, {
       first_name: "Aniela",
       last_name: "Wolkonowski",
       user_name: "Dance Mistress",
       email: "anielamw@gmail.com",
       password: "12041980",
-      admin: true,
+      admin: true
     }, {
       first_name: "Dan",
       last_name: "Seppler",

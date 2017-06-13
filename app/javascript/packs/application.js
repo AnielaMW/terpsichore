@@ -10,14 +10,22 @@
 //= require jquery
 //= require jquery_ujs
 
-import jQuery from 'jquery';
+// import jQuery from 'jquery';
+//
+// window.jQuery = jQuery;
 
-window.jQuery = jQuery;
-
-import 'dance_comments/new';
-import 'dances/edit';
-import 'dances/new';
+import { addBlankDirection } from '../dance_directions/add';
+import { submitDCClick } from '../dance_comments/new';
+import { submitDDDClick } from '../dances/new';
+import { submitDDDEditClick } from '../dances/edit';
 import 'dance_directions/edit';
 import 'dance_directions/new';
-import 'dance_directions/add';
 import 'sitewide';
+
+$(document).ready(() => {
+  $('#dance-new').on('click', '#dd-add', addBlankDirection);
+  $('#dance-edit').on('click', '#dd-add', addBlankDirection);
+  $('#dance-show #dc-form').submit(submitDCClick);
+  $('form#new_dance').submit(submitDDDClick);
+  $('form.edit_dance').submit(submitDDDEditClick);
+});

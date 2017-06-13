@@ -222,6 +222,15 @@
         null,
         null
       ],
+      "/Users/Aniela/challenges/Capstone/terpsichore/Rakefile": [
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1
+      ],
       "/Users/Aniela/challenges/Capstone/terpsichore/app/controllers/dances_controller.rb": [
         1,
         1,
@@ -267,6 +276,7 @@
         null,
         null,
         null,
+        1,
         1,
         1,
         1,
@@ -894,6 +904,10 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
         0
       ],
       "/Users/Aniela/challenges/Capstone/terpsichore/app/controllers/api/dance_directions_controller.rb": [
@@ -960,17 +974,6 @@
         0,
         0,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         0
       ],
       "/Users/Aniela/challenges/Capstone/terpsichore/app/jobs/application_job.rb": [
@@ -984,6 +987,6 @@
         0
       ]
     },
-    "timestamp": 1497064422
+    "timestamp": 1497202533
   }
 }

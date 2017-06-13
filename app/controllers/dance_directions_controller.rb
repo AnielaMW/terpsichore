@@ -1,9 +1,13 @@
 class DanceDirectionsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :admin_user?, only: [:show]
-  before_action :set_dance_direction, only: [:show]
+  before_action :set_dance_direction, only: [:show, :destroy]
 
   def show
+  end
+
+  def destroy
+    @dance_direction.destroy
   end
 
   private
