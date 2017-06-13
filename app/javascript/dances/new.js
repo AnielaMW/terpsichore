@@ -1,3 +1,5 @@
+import { submitDDAdd } from '../dance_directions/new';
+
 class NewDance{
   constructor() {
     this.id = $('#dance-id').text();
@@ -48,6 +50,4 @@ let submitDDDClick = (event) => {
   saveDance();
 };
 
-$(document).ready(() => {
-  $('form#new_dance').submit(submitDDDClick);
-});
+export { submitDDDClick, NewDance, dividNewDirections };

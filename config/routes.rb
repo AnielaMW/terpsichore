@@ -4,9 +4,8 @@ Rails.application.routes.draw do
 
   root 'dances#index'
 
-  resources :users do
+  resources :users, only: [:index, :show] do
     resources :profiles
-    # should :profiles be namespaced
   end
   resources :dances do
     resources :dance_comments, only: [:new, :create]

@@ -1,8 +1,6 @@
-let appendTarget = (target, text) => {
-  target.append(text);
-};
+import { appendTarget } from '../sitewide';
 
-addBlankDirection = () => {
+let addBlankDirection = () => {
   let newDDForm = `<tr class="dd-new">
   <td class="seq hidden-label">
     <label for="sequence">Sequence</label>
@@ -35,7 +33,4 @@ addBlankDirection = () => {
   appendTarget(ddList, newDDForm);
 };
 
-$(document).ready(() => {
-  $('#dance-new').on('click', '#dd-add', addBlankDirection);
-  $('#dance-edit').on('click', '#dd-add', addBlankDirection);
-});
+export { addBlankDirection };

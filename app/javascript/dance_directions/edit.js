@@ -1,3 +1,5 @@
+import { NewDanceDirection } from '../dance_directions/new';
+
 let submitDDUpdate = (dd, newDan) => {
 
   let ddirection = {
@@ -10,7 +12,7 @@ let submitDDUpdate = (dd, newDan) => {
     d_id: newDan.id
   };
 
-  newDD = new NewDanceDirection(ddirection);
+  let newDD = new NewDanceDirection(ddirection);
 
   let saveDirections = () => {
     $.ajax({
@@ -23,3 +25,5 @@ let submitDDUpdate = (dd, newDan) => {
   saveDirections();
   return newDD;
 };
+
+export { submitDDUpdate };

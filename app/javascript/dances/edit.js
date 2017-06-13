@@ -1,3 +1,6 @@
+import { NewDance, dividNewDirections } from '../dances/new';
+import { submitDDUpdate } from '../dance_directions/edit';
+
 let dividUpdateDirections = (dds, newDan) => {
   dds.each((dd) => {
     newDan.directions.push(submitDDUpdate(dd, newDan));
@@ -28,6 +31,4 @@ let submitDDDEditClick = (event) => {
   updateDance();
 };
 
-$(document).ready(() => {
-  $('form.edit_dance').submit(submitDDDEditClick);
-});
+export { submitDDDEditClick };

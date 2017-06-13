@@ -1,3 +1,5 @@
+import { prependTarget } from '../sitewide';
+
 class NewComment{
   constructor() {
     this.comment = $('#dance_comment_comment').val();
@@ -32,10 +34,6 @@ class NewComment{
   }
 }
 
-let prependTarget = (target, text) => {
-  target.prepend(text);
-};
-
 let submitDCClick = (event) => {
   event.preventDefault();
 
@@ -61,6 +59,4 @@ let submitDCClick = (event) => {
   saveComment();
 };
 
-$(document).ready(() => {
-  $('#dance-show #dc-form').submit(submitDCClick);
-});
+export { submitDCClick };

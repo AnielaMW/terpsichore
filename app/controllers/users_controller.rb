@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :show]
+  before_action :admin_user?
   before_action :users, only: [:index]
   before_action :set_user, only: [:show]
 
@@ -7,8 +8,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @dances = list_dances
-    @dance_comments = list_dcomments
+    @dances ||= list_dances
+    @dance_comments ||= list_dcomments
   end
 
   private

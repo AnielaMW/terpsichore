@@ -25,7 +25,7 @@ let submitDDAdd = (dd, newDan) => {
     d_id: newDan.id
   };
 
-  newDD = new NewDanceDirection(ddirection);
+  let newDD = new NewDanceDirection(ddirection);
 
   let saveDirections = () => {
     $.ajax({
@@ -42,3 +42,5 @@ let submitDDAdd = (dd, newDan) => {
   saveDirections();
   return newDD;
 };
+
+export { submitDDAdd, newDD, NewDanceDirection };
