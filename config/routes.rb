@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'dances#index'
 
   resources :users, only: [:index, :show] do
-    resources :profiles
+    resources :profiles, only: [:new, :create]
   end
   resources :dances do
     resources :dance_comments, only: [:new, :create]
@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :moods
   resources :tempos
   resources :comment_types
+  resources :profiles, except: [:new, :create]
 
   namespace :api do
     resources :dance_comments, only: [:create]
