@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :dances
   has_many :dance_comments
+  has_one :profile, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

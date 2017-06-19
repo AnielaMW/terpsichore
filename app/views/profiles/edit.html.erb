@@ -1,0 +1,5 @@
+<main id="profile-edit" class="profile-edit">
+  <h2>Edit <%= @profile.user.user_name %></h2>
+  <p id='profile-id' class='hidden-all'><%= @profile.id %></p>
+  <%= render 'form', profile: @profile %>
+</main>
