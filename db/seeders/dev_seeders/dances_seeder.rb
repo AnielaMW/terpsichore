@@ -3,7 +3,7 @@ require 'json'
 class DanceDevSeeder
 
   def self.seed!
-    dance_list = JSON.parse(IO.read('db/seeders/dance_data/header.json'))
+    dance_list = JSON.parse(IO.read('db/seeders/dev_seeders/dance_data/header.json'))
 
     dance_list["header"].each do |d_params|
 
