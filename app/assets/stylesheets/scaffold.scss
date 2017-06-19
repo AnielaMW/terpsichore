@@ -137,6 +137,20 @@ header aside {
   padding-right: 8px;
 }
 
+// Sitewide general
+
+fieldset {
+  border: 1px solid $color-black;
+  margin-bottom: 15px;
+
+  legend{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 5px;
+    padding: 0 5px;
+  }
+}
+
 // Sitewide bottom lines
 .bottom-line {
   text-align: center;
@@ -181,7 +195,7 @@ header aside {
 }
 
 //------------Smart Phone Portrait-------------//
-@media only screen and (max-width: 499px) {
+@media (max-width: 499px) {
 
   // Basic Sitewide CSS Styles
   html {
