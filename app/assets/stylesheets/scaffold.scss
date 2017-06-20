@@ -58,7 +58,7 @@ input {
 }
 
 main {
-  padding: 0 2.040816%; // 0 20px; //
+  padding: 0 2.75%; // 0 20px; //
 }
 
 a {
@@ -178,6 +178,7 @@ fieldset {
 // Sitewide bottom lines
 .bottom-line {
   text-align: center;
+  vertical-align: bottom;
 }
 
 // Sitewide Footer
@@ -276,7 +277,7 @@ fieldset {
 }
 
 //------------Smart Phone Portrait-------------//
-@media only screen and (max-width: 499px) {
+@media only screen and (max-width: 500px) {
 
   // Basic Sitewide CSS Styles
   html {

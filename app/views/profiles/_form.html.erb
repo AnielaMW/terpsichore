@@ -2,17 +2,19 @@
   <div id="forms" class="forms" spellcheck="true">
     <form id="up-form">
 
+      <h3>Location</h3>
       <div class="location">
-        <h3>Location</h3>
-        <div class="field medium">
+        <div class="field short">
           <%= f.label :l_city, "City" %>
           <%= f.text_field :l_city, autofocus: true %>
         </div>
-        <div class="field medium">
-          <%= f.label :l_state, "State, County, Province, or District" %>
+
+        <div class="field short">
+          <%= f.label :l_state, "State/County/Province" %>
           <%= f.text_field :l_state, autofocus: true %>
         </div>
-        <div class="field medium">
+
+        <div class="field short">
           <%= f.label :l_country, "Country" %>
           <%= f.text_field :l_country, autofocus: true %>
         </div>
@@ -20,29 +22,31 @@
 
       <fieldset>
         <legend>I am a...</legend>
-        <div class="line-up">
-          <%= f.check_box(:dancer) %>
-          <%= f.label :dancer, "Dancer" %>
-        </div>
-        <div class="line-up">
-          <%= f.check_box(:caller) %>
-          <%= f.label :caller, "Caller" %>
-        </div>
-        <div class="line-up">
-          <%= f.check_box(:musician) %>
-          <%= f.label :musician, "Musician" %>
-        </div>
-        <div class="line-up">
-          <%= f.check_box(:band) %>
-          <%= f.label :band, "Band" %>
-        </div>
-        <div class="line-up">
-          <%= f.check_box(:choreographer) %>
-          <%= f.label :choreographer, "Choreographer" %>
-        </div>
-        <div class="line-up">
-          <%= f.check_box(:composer) %>
-          <%= f.label :composer, "Composer" %>
+        <div class="ima">
+          <div>
+            <%= f.check_box(:dancer) %>
+            <%= f.label :dancer, "Dancer" %>
+          </div>
+          <div>
+            <%= f.check_box(:caller) %>
+            <%= f.label :caller, "Caller" %>
+          </div>
+          <div>
+            <%= f.check_box(:musician) %>
+            <%= f.label :musician, "Musician" %>
+          </div>
+          <div>
+            <%= f.check_box(:band) %>
+            <%= f.label :band, "Band" %>
+          </div>
+          <div>
+            <%= f.check_box(:choreographer) %>
+            <%= f.label :choreographer, "Choreographer" %>
+          </div>
+          <div>
+            <%= f.check_box(:composer) %>
+            <%= f.label :composer, "Composer" %>
+          </div>
         </div>
         <div class="field text_field">
           <%= f.text_area :about, spellcheck: true, placeholder: "About me..." %>
@@ -52,46 +56,59 @@
       <fieldset>
         <legend>Privacy Information:</legend>
         <h1>Share your...</h1>
-        <div class="line-up">
-          <h6>First Name? </h6>
-          <%= f.radio_button :privacy_fn, true %>
-          <%= f.label :true, "Yes" %>
-          <%= f.radio_button :privacy_fn, false %>
-          <%= f.label :false, "No" %>
-        </div>
-        <div class="line-up">
-          <h6>Last Name? </h6>
-          <%= f.radio_button :privacy_ln, true %>
-          <%= f.label :true, "Yes" %>
-          <%= f.radio_button :privacy_ln, false %>
-          <%= f.label :false, "No" %>
-        </div>
-        <div class="line-up">
-          <h6>Email? </h6>
-          <%= f.radio_button :privacy_ce, true %>
-          <%= f.label :true, "Yes" %>
-          <%= f.radio_button :privacy_ce, false %>
-          <%= f.label :false, "No" %>
-        </div>
-        <div class="line-up">
+        <div class="privacy-box">
+          <section>
+            <div>
+              <h6>First Name? </h6>
+              <%= f.radio_button :privacy_fn, true %>
+              <%= f.label :true, "Yes" %>
+              <%= f.radio_button :privacy_fn, false %>
+              <%= f.label :false, "No" %>
+            </div>
+
+            <div>
+              <h6>Last Name? </h6>
+              <%= f.radio_button :privacy_ln, true %>
+              <%= f.label :true, "Yes" %>
+              <%= f.radio_button :privacy_ln, false %>
+              <%= f.label :false, "No" %>
+            </div>
+
+            <div>
+              <h6>Email? </h6>
+              <%= f.radio_button :privacy_ce, true %>
+              <%= f.label :true, "Yes" %>
+              <%= f.radio_button :privacy_ce, false %>
+              <%= f.label :false, "No" %>
+            </div>
+          </section><br>
+
           <h6>Location: </h6>
-          <h6>City?</h6>
-          <%= f.radio_button :privacy_lcity, true %>
-          <%= f.label :true, "Yes" %>
-          <%= f.radio_button :privacy_lcity, false %>
-          <%= f.label :false, "No" %>
+          <section>
+            <div>
+              <h6>City?</h6>
+              <%= f.radio_button :privacy_lcity, true %>
+              <%= f.label :true, "Yes" %>
+              <%= f.radio_button :privacy_lcity, false %>
+              <%= f.label :false, "No" %>
+            </div>
 
-          <h6>State?</h6>
-          <%= f.radio_button :privacy_lstate, true %>
-          <%= f.label :true, "Yes" %>
-          <%= f.radio_button :privacy_lstate, false %>
-          <%= f.label :false, "No" %>
+            <div>
+              <h6>State?</h6>
+              <%= f.radio_button :privacy_lstate, true %>
+              <%= f.label :true, "Yes" %>
+              <%= f.radio_button :privacy_lstate, false %>
+              <%= f.label :false, "No" %>
+            </div>
 
-          <h6>Country?</h6>
-          <%= f.radio_button :privacy_lcountry, true %>
-          <%= f.label :true, "Yes" %>
-          <%= f.radio_button :privacy_lcountry, false %>
-          <%= f.label :false, "No" %>
+            <div>
+              <h6>Country?</h6>
+              <%= f.radio_button :privacy_lcountry, true %>
+              <%= f.label :true, "Yes" %>
+              <%= f.radio_button :privacy_lcountry, false %>
+              <%= f.label :false, "No" %>
+            </div>
+          </section>
         </div>
       </fieldset>
 

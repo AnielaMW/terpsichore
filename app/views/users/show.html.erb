@@ -6,7 +6,7 @@
         <li><%= link_to image_tag("icons/svg/user-settings", alt:"Edit Account", title:"Edit Account", class:"user-icon user-settings"), edit_user_registration_path(@user) %></li>
       </ul>
     <% end %>
-    <h2><%= @user.user_name %></h2>
+    <h1><%= @user.user_name %></h1>
   </header>
 
   <h4>
@@ -36,27 +36,38 @@
     <% end %>
   </h6>
 
-  <fieldset class="ima">
-    <legend>I am a...</legend>
-    <% if @profile.dancer %>
-      <%= image_tag("user_badges/dancer.svg", alt: "Dancer badge", width: "100px") %>
-    <% end %>
-    <% if @profile.caller %>
-    <%= image_tag("user_badges/caller.svg", alt: "Caller badge", width: "100px") %>
-    <% end %>
-    <% if @profile.musician %>
-    <%= image_tag("user_badges/musician.svg", alt: "Musician badge", width: "100px") %>
-    <% end %>
-    <% if @profile.band %>
-    <%= image_tag("user_badges/band.svg", alt: "Band badge", width: "100px") %>
-    <% end %>
-    <% if @profile.choreographer %>
-    <%= image_tag("user_badges/choreographer.svg", alt: "Choreographer badge", width: "100px") %>
-    <% end %>
-    <% if @profile.composer %>
-    <%= image_tag("user_badges/composer.svg", alt: "Composer badge", width: "100px") %>
-    <% end %>
-  </fieldset>
+  <% if @profile.summary %>
+    <fieldset class="ima">
+      <% if @profile.ima %>
+        <legend>I am a...</legend>
+        <div class="badges-box">
+          <% if @profile.dancer %>
+            <%= image_tag("user_badges/dancer.svg", alt: "Dancer badge", width: "100px") %>
+          <% end %>
+          <% if @profile.caller %>
+          <%= image_tag("user_badges/caller.svg", alt: "Caller badge", width: "100px") %>
+          <% end %>
+          <% if @profile.musician %>
+          <%= image_tag("user_badges/musician.svg", alt: "Musician badge", width: "100px") %>
+          <% end %>
+          <% if @profile.band %>
+          <%= image_tag("user_badges/band.svg", alt: "Band badge", width: "100px") %>
+          <% end %>
+          <% if @profile.choreographer %>
+          <%= image_tag("user_badges/choreographer.svg", alt: "Choreographer badge", width: "100px") %>
+          <% end %>
+          <% if @profile.composer %>
+          <%= image_tag("user_badges/composer.svg", alt: "Composer badge", width: "100px") %>
+          <% end %>
+        </div>
+      <% end %>
+      <% if @profile.about %>
+        <div class="about">
+          <p><%= @profile.about %></p>
+        </div>
+      <% end %>
+    </fieldset>
+  <% end %>
 
   <% if @user.dances? %>
     <section class="dances">
