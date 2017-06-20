@@ -67,7 +67,7 @@ a {
 }
 
 a:hover {
-  color: #00008b;
+  color: $color-gold;
   text-decoration: underline;
 }
 
@@ -118,7 +118,12 @@ header aside {
 
 // Sitewide top nav bar
 .nav-bar {
+  color: $color-white;
+  font-size: 1.5em;
   order: 2;
+  padding: 2px 15px 2px 5px;
+  text-align: center;
+  text-shadow: 1px 3px 1px $color-black;
 
   .eliza-brun {
     height: 250px;
@@ -126,9 +131,20 @@ header aside {
   }
 
   li {
+    background-color: $color-teal;
+    border: 2px solid $color-black;
     display: block;
+    margin: 5px 0;
     padding: 5px;
-    text-align: center;
+  }
+
+  li:hover {
+    background-color: $color-gold;
+
+    a:hover{
+      color: $color-white;
+      text-decoration: none;
+    }
   }
 }
 
@@ -228,7 +244,18 @@ fieldset {
     }
 
     li{
+      border: none;
       display: inline-block;
+      padding: 3px 20px;
+    }
+
+    li:hover {
+      background-color: $color-teal;
+
+      a:hover{
+        color: $color-gold;
+        text-decoration: underline;
+      }
     }
   }
 
