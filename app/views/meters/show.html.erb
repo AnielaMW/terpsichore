@@ -3,7 +3,8 @@
   <header>
     <ul class="user-bar">
       <li><%= link_to image_tag("icons/svg/trashcan", alt:"Delete", class:"icon"), @meter, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-      <li><%= link_to 'Edit', edit_meter_path(@meter) %></li>
+      <li><%= link_to image_tag("icons/svg/pencil", alt:"Edit",
+      class:"icon"), edit_meter_path(@meter) %></li>
     </ul>
   </header>
   <% end %>
