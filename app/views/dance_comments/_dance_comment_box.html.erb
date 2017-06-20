@@ -10,7 +10,7 @@
         <li><%= link_to "Edit", edit_dance_comment_path(dc) %></li>
       <% end %>
       <% if dc.creator?(current_user) || dc.dance.creator?(current_user) || @admin_user %>
-        <li><%= link_to 'Delete', dc, method: :delete, data: { confirm: 'Are you sure?' }, :class => "remove-comment" %></li>
+        <li><%= link_to image_tag("icons/svg/trashcan", alt:"Delete", class:"icon"), dc, method: :delete, data: { confirm: 'Are you sure?' }, :class => "remove-comment" %></li>
       <% end %>
     </ul>
   </footer>

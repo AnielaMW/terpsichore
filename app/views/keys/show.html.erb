@@ -2,8 +2,8 @@
   <% if @admin_user %>
     <aside>
       <ul class="user-bar">
+        <li><%= link_to image_tag("icons/svg/trashcan", alt:"Delete", class:"icon"), @key, method: :delete, data: { confirm: 'Are you sure?' } %></li>
         <li><%= link_to 'Edit', edit_key_path(@key) %></li>
-        <li><%= link_to 'Delete', @key, method: :delete, data: { confirm: 'Are you sure?' } %></li>
       </ul>
     </aside>
   <% end %>

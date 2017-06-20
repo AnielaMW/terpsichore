@@ -2,8 +2,8 @@
   <% if @admin_user %>
     <aside>
       <ul class="user-bar">
+        <li><%= image_tag("icons/svg/trashcan", alt:"Delete", class:"icon"), @dance_level, method: :delete, data: { confirm: 'Are you sure?' } %></li>
         <li><%= link_to 'Edit', edit_dance_level_path(@dance_level) %></li>
-        <li><%= link_to 'Delete', @dance_level, method: :delete, data: { confirm: 'Are you sure?' } %></li>
       </ul>
     </aside>
   <% end %>
