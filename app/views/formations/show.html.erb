@@ -2,8 +2,8 @@
   <% if @admin_user %>
     <aside>
       <ul class="user-bar">
-        <li><%= link_to image_tag("icons/svg/trashcan", alt:"Delete", class:"icon"), @formation, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-        <li><%= link_to image_tag("icons/svg/pencil", alt:"Edit",
+        <li><%= link_to image_tag("icons/svg/trashcan", alt:"Delete", title:"Delete", class:"icon"), @formation, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <li><%= link_to image_tag("icons/svg/pencil", alt:"Edit", title:"Edit",
         class:"icon"), edit_formation_path(@formation) %></li>
       </ul>
     </aside>
