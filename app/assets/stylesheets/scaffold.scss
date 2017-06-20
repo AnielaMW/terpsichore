@@ -190,7 +190,7 @@ fieldset {
   text-shadow: 1px 3px 1px $color-black;
 
   h1 {
-    font-size: 1.4285em;  // 20px; //
+    font-size: 1.5em;
     font-style: italic;
     font-weight: normal;
     text-align: center;
@@ -228,33 +228,38 @@ fieldset {
 
   // Sitewide top nav bar
   .nav-bar {
-    text-align: center;
+    align-items: center;
     background-color: $color-teal;
     color: $color-white;
+    display: -webkit-flex;
+    display: flex;
     margin-bottom: 20px;
     padding: 1.020408% 2.040816%; // 10px 20px; //
+    text-align: center;
     text-shadow: 1px 3px 1px $color-black;
 
     .eliza-brun {
       height: 150px;
+      order: 2;
     }
 
     ul {
       margin-top: 0;
-    }
+      order: 1;
 
-    li{
-      border: none;
-      display: inline-block;
-      padding: 3px 20px;
-    }
+      li{
+        border: none;
+        display: inline-block;
+        padding: 3px 20px;
+      }
 
-    li:hover {
-      background-color: $color-teal;
+      li:hover {
+        background-color: $color-teal;
 
-      a:hover{
-        color: $color-gold;
-        text-decoration: underline;
+        a:hover{
+          color: $color-gold;
+          text-decoration: underline;
+        }
       }
     }
   }
