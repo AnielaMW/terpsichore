@@ -9,20 +9,20 @@
     <h1><%= @user.user_name %></h1>
   </header>
 
-  <h4>
+  <h2>
     <% if @profile.privacy_fn %>
       <%= @user.first_name %>
     <% end %>
     <% if @profile.privacy_ln %>
       <%= @user.last_name %>
     <% end %>
-  </h4>
+  </h2>
 
-  <h6>
+  <h5>
     <% if @profile.privacy_ce %>
       <%= @user.email %>
     <% end %>
-  </h6>
+  </h5>
 
   <h6>
     <% if @profile.privacy_lcity %>
