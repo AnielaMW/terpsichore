@@ -153,7 +153,7 @@ header aside {
   display: inline;
   float: right;
   font-size: 12px;
-  // margin-top: 14px;
+  margin-top: 14px;
   margin-right: 8px;
 }
 
@@ -201,6 +201,11 @@ fieldset {
 // Sitewide icon css
 .icon {
   height: 20px;
+}
+
+.help-icon {
+  height: 15px;
+  vertical-align: sub;
 }
 
 //-------------------------------MEDIA QUERIES-------------------------------//
