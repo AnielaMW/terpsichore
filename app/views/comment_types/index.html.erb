@@ -2,7 +2,7 @@
   <header>
     <% if @admin_user %>
       <ul class="user-bar">
-        <li><%= link_to 'Create New Type', new_comment_type_path %></li>
+        <li><%= link_to image_tag("icons/svg/create", alt:"Create Comment Type", title:"Create Comment Type", class:"user-icon"), new_comment_type_path %></li>
       </ul>
     <% end %>
 
