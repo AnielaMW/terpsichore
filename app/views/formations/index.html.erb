@@ -10,7 +10,7 @@
     <% @formations.each do |forma| %>
       <li>
         <article class="formation-box">
-          <h2><%= link_to forma.name, formation_path(forma) %> <bdi>- <%= forma.description %></bdi></h2>
+          <h3><%= link_to forma.name, formation_path(forma) %> <bdi>- <%= forma.description %></bdi></h3>
         </article>
       </li>
     <% end %>

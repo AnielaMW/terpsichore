@@ -13,7 +13,7 @@
     <% @comment_types.each do |ct| %>
       <li>
         <article class="comment-type-box">
-          <h2><%= link_to ct.name, comment_type_path(ct) %> <bdi>- <%= ct.description %></bdi></h2>
+          <h3><%= link_to ct.name, comment_type_path(ct) %> <bdi>- <%= ct.description %></bdi></h3>
         </article>
       </li>
     <% end %>

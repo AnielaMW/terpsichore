@@ -13,7 +13,7 @@
     <% @dance_levels.each do |dance_level| %>
       <li>
         <article class="dance_level-box">
-          <h2><%= link_to dance_level.name, dance_level_path(dance_level) %> <bdi>- <%= dance_level.description %></bdi></h2>
+          <h3><%= link_to dance_level.name, dance_level_path(dance_level) %> <bdi>- <%= dance_level.description %></bdi></h3>
         </article>
       </li>
     <% end %>

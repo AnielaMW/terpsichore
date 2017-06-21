@@ -10,7 +10,7 @@
     <% @moods.each do |mood| %>
       <li>
         <article class="mood-box">
-          <h2><%= link_to mood.name, mood_path(mood) %></h2>
+          <h3><%= link_to mood.name, mood_path(mood) %></h3>
         </article>
       </li>
     <% end %>

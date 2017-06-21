@@ -13,7 +13,7 @@
     <% @tempos.each do |tempo| %>
       <li>
         <article class="tempo-box">
-          <h2><%= link_to tempo.name, tempo_path(tempo) %> <bdi>- <%= tempo.description %></bdi></h2>
+          <h3><%= link_to tempo.name, tempo_path(tempo) %> <bdi>- <%= tempo.description %></bdi></h3>
         </article>
       </li>
     <% end %>
