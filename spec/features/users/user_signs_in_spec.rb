@@ -17,10 +17,10 @@ feature 'sign_in to account', %{
 
   scenario 'sucessfully sign_in when user enters valid information' do
     visit root_path
-    click_link 'Sign In'
+    click_on 'Sign In'
     fill_in 'Email', with: anne.email.to_s
     fill_in 'Password', with: anne.password.to_s
-    click_button 'Sign In'
+    click_on 'Log In'
 
     expect(page).to have_content('Signed in successfully.')
     expect(page).to have_content('Sign Out')
@@ -29,8 +29,8 @@ feature 'sign_in to account', %{
 
   scenario 'fails to sign_in when user enters incomplete information' do
     visit root_path
-    click_link 'Sign In'
-    click_button 'Sign In'
+    click_on 'Sign In'
+    click_on 'Log In'
 
     expect(page).to have_content('Invalid Email or password')
     expect(page).to have_content('Sign In')
@@ -38,10 +38,10 @@ feature 'sign_in to account', %{
 
   scenario 'fails to sign_in when user enters invalid email' do
     visit root_path
-    click_link 'Sign In'
+    click_on 'Sign In'
     fill_in 'Email', with: william[:email].to_s
     fill_in 'Password', with: anne.password.to_s
-    click_button 'Sign In'
+    click_on 'Log In'
 
     expect(page).to have_content('Invalid Email or password')
     expect(page).to have_content('Sign In')
@@ -49,10 +49,10 @@ feature 'sign_in to account', %{
 
   scenario 'fails to sign_in when user enters invalid password' do
     visit root_path
-    click_link 'Sign In'
+    click_on 'Sign In'
     fill_in 'Email', with: anne.email.to_s
     fill_in 'Password', with: william[:password].to_s
-    click_button 'Sign In'
+    click_on 'Log In'
 
     expect(page).to have_content('Invalid Email or password')
     expect(page).to have_content('Sign In')

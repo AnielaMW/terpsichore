@@ -17,7 +17,7 @@ feature 'delete a mood', %{
   scenario 'sucessfully delete a mood when admin user' do
     sign_in admin
     visit mood_path(mood.id)
-    click_link "Delete"
+    click_on "Delete"
 
     expect(page).to have_current_path(moods_path)
     expect(page).not_to have_content(mood.name)
@@ -25,6 +25,6 @@ feature 'delete a mood', %{
 
   scenario 'fail to see "Delete" button with non-admin user' do
     visit mood_path(mood.id)
-    expect(page).not_to have_content("Delete")
+    expect(page).to have_no_selector(:link_or_button, "delete-mood")
   end
 end

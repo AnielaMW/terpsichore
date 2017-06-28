@@ -25,7 +25,7 @@ feature 'view keys#index', %{
     expect(keys[2]).to have_content(level3.name)
 
     visit root_path
-    click_link "Keys"
+    click_on "Keys"
 
     keys = page.all(".info-list article")
 

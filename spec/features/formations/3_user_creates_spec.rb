@@ -18,13 +18,13 @@ feature 'create a formation', %{
     with valid information' do
     sign_in anne
     visit formations_path
-    click_link "New Formation"
+    click_on "Create Formation"
 
     expect(page).to have_current_path(new_formation_path)
 
     fill_in 'Name', with: new_formation[:name].to_s
     fill_in 'Description', with: new_formation[:description].to_s
-    click_button "Create Formation"
+    click_on "Create Formation"
     visit formations_path
 
     expect(page).to have_content(new_formation[:name])
@@ -34,10 +34,10 @@ feature 'create a formation', %{
     with invalid information' do
     sign_in anne
     visit formations_path
-    click_link "New Formation"
+    click_on "Create Formation"
     fill_in 'Name', with: ""
     fill_in 'Description', with: ""
-    click_button "Create Formation"
+    click_on "Create Formation"
 
     expect(page).to have_content(
       "Name can't be blank, Description can't be blank"
@@ -45,7 +45,7 @@ feature 'create a formation', %{
   end
 
   scenario 'fail to create a formation with unauthenticated user' do
-    visit new_dance_path
+    visit new_formation_path
 
     expect(page).to have_content(
       "You need to sign in or sign up before continuing."

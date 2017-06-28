@@ -25,7 +25,7 @@ feature 'view formations#index', %{
     expect(formations[2]).to have_content(form2.name)
 
     visit root_path
-    click_link "Formations"
+    click_on "Formations"
 
     formations = page.all(".info-list article")
 

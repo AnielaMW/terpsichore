@@ -20,13 +20,14 @@ feature 'update a formation', %{
   scenario 'admin user sucessfully update formation with valid information' do
     sign_in admin
     visit formation_path(formation.id)
-    click_link "Edit"
+expect(page).to have_selector(:link_or_button, "edit-formation")
+    click_on "Edit"
 
     expect(page).to have_current_path(edit_formation_path(formation))
 
     fill_in 'Name', with: changes[:name].to_s
     fill_in 'Description', with: changes[:description].to_s
-    click_button "Update"
+    click_on "Update"
 
     expect(page).to have_current_path(formation_path(formation.id))
     expect(page).to have_content(changes[:name])
@@ -36,10 +37,10 @@ feature 'update a formation', %{
   scenario 'admin user fail to update formation with invalid information' do
     sign_in admin
     visit formation_path(formation.id)
-    click_link "Edit"
+    click_on "Edit"
     fill_in 'Name', with: ""
     fill_in 'Description', with: ""
-    click_button "Update"
+    click_on "Update"
 
     expect(page).to have_content("Name can't be blank,
     Description can't be blank")
@@ -48,6 +49,6 @@ feature 'update a formation', %{
   scenario 'fail to see "Edit" button with non-admin user' do
     visit formation_path(formation.id)
 
-    expect(page).not_to have_content("Edit")
+    expect(page).to have_no_selector(:link_or_button, "edit-formation")
   end
 end

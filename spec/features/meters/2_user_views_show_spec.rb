@@ -24,12 +24,12 @@ feature 'view meters#show', %{
   scenario 'sucessfully view a meter#show from meters#index_path or
   dance_path' do
     visit meters_path
-    click_link meter.name.to_s
+    click_on meter.name.to_s
 
     expect(page).to have_current_path(meter_path(meter.id))
 
     visit dance_path(dance)
-    click_link meter.name.to_s
+    click_on meter.name.to_s
 
     expect(page).to have_current_path(meter_path(meter.id))
     # AS A TOOLTIP OVER EACH FORMATIONS NAME IN THE DROP DOWN

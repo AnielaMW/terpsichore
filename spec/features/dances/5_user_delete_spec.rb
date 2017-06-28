@@ -18,7 +18,7 @@ feature 'delete a dance', %{
   scenario 'sucessfully delete a dance when authenticated user' do
     sign_in anne
     visit dance_path(dance1.id)
-    click_link "Delete"
+    click_on "Delete"
 
     expect(page).to have_current_path(root_path)
     expect(page).not_to have_content(dance1.title)
@@ -27,10 +27,10 @@ feature 'delete a dance', %{
   scenario 'fail to see "Delete" button with unauthenticated or not creator
   user' do
     visit dance_path(dance1.id)
-    expect(page).not_to have_content("Delete")
+    expect(page).to have_no_selector(:link_or_button, "delete-dance")
 
     sign_in clay
     visit dance_path(dance1.id)
-    expect(page).not_to have_content("Delete")
+    expect(page).to have_no_selector(:link_or_button, "delete-dance")
   end
 end

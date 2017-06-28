@@ -23,12 +23,12 @@ feature 'view moods#show', %{
   scenario 'sucessfully view a mood#show from moods#index_path or
   dance_path' do
     visit moods_path
-    click_link dm.mood.name
+    click_on dm.mood.name
 
     expect(page).to have_current_path(mood_path(dm.mood.id))
 
     visit dance_path(dm.dance.id)
-    click_link dm.mood.name
+    click_on dm.mood.name
 
     expect(page).to have_current_path(mood_path(dm.mood.id))
 

@@ -24,13 +24,13 @@ feature 'update a dance_comment', %{
   information from dance_path' do
     sign_in com1.user
     visit dance_comment_path(com1.id)
-    click_link "Edit"
+    click_on "Edit"
 
     expect(page).to have_current_path(edit_dance_comment_path(com1))
 
     fill_in 'Comment', with: changes[:comment].to_s
     select type.name.to_s, from: 'Type'
-    click_button "Update"
+    click_on "Update"
 
     expect(page).to have_current_path(dance_comment_path(com1.id))
     expect(page).to have_content(changes[:comment])
@@ -44,7 +44,7 @@ feature 'update a dance_comment', %{
 
     comment_boxes = page.all("article.comment-box")
 
-    expect(comment_boxes[0]).to have_content("Edit")
+    expect(comment_boxes[0]).to have_selector(:link_or_button, "edit-comment")
   end
 
   scenario 'creator sucessfully select edit button from the dance_comments
@@ -54,17 +54,17 @@ feature 'update a dance_comment', %{
 
     comment_boxes = page.all("article.comment-box")
 
-    expect(comment_boxes[0]).to have_content("Edit")
+    expect(comment_boxes[0]).to have_selector(:link_or_button, "edit-comment")
   end
 
   scenario 'authenticated user fail to update dance_comment with invalid
   information' do
     sign_in com1.user
     visit dance_comment_path(com1.id)
-    click_link "Edit"
+    click_on "Edit"
     fill_in 'Comment', with: ""
     # select "", from: 'Type'
-    click_button "Update"
+    click_on "Update"
 
     expect(page).to have_content("Comment can't be blank")
   end
@@ -72,7 +72,7 @@ feature 'update a dance_comment', %{
   scenario 'fail to see "Edit" button with unauthenticated user' do
     visit dance_comment_path(com1.id)
 
-    expect(page).not_to have_content("Edit")
+    expect(page).to have_no_selector(:link_or_button, "edit-comment")
   end
 
   scenario 'fail to see "Edit" button if authenticated user is not the
@@ -80,6 +80,6 @@ feature 'update a dance_comment', %{
     sign_in clay
     visit dance_comment_path(com1.id)
 
-    expect(page).not_to have_content("Edit")
+    expect(page).to have_no_selector(:link_or_button, "edit-comment")
   end
 end

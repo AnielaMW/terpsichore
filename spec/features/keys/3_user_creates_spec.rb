@@ -18,12 +18,12 @@ feature 'create a key', %{
     with valid information' do
     sign_in anne
     visit keys_path
-    click_link "New Key"
+    click_on "Create Key"
 
     expect(page).to have_current_path(new_key_path)
 
     fill_in 'Name', with: new_key[:name].to_s
-    click_button "Create Key"
+    click_on "Create Key"
     visit keys_path
 
     expect(page).to have_content(new_key[:name])
@@ -33,15 +33,15 @@ feature 'create a key', %{
     with invalid information' do
     sign_in anne
     visit keys_path
-    click_link "New Key"
+    click_on "Create Key"
     fill_in 'Name', with: ""
-    click_button "Create Key"
+    click_on "Create Key"
 
     expect(page).to have_content("Name can't be blank")
   end
 
   scenario 'fail to create a key with unauthenticated user' do
-    visit new_dance_path
+    visit new_key_path
 
     expect(page).to have_content(
       "You need to sign in or sign up before continuing."

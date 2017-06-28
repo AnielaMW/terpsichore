@@ -39,7 +39,7 @@ feature 'view dance_directions#show', %{
     visit dance_path(dir1.dance_id)
     # May eventutally want to be able to click anywhere within this sequences
     # table row to access this page.
-    click_link dir1.sequence.to_s
+    click_on dir1.sequence.to_s
 
     expect(page).to have_current_path(
       dance_dance_direction_path(dir1.dance_id, dir1.id)

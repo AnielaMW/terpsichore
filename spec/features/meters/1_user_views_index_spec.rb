@@ -25,7 +25,7 @@ feature 'view meters#index', %{
     expect(meters[2]).to have_content(meter3.name)
 
     visit root_path
-    click_link "Meters"
+    click_on "Meters"
 
     meters = page.all(".info-list article")
 

@@ -19,7 +19,7 @@ feature 'delete a dance_comment', %{
   dance_comment_path' do
     sign_in com1.user
     visit dance_comment_path(com1.id)
-    click_link "Delete"
+    click_on "Delete"
 
     expect(page).to have_current_path(dance_path(com1.dance))
     expect(page).not_to have_content(com1.comment)
@@ -28,7 +28,7 @@ feature 'delete a dance_comment', %{
   scenario 'creator sucessfully delete a dance_comment from the dance path' do
     sign_in com2.user
     visit dance_path(com2.dance)
-    click_link "Delete"
+    click_on "Delete"
 
     expect(page).to have_current_path(dance_path(com2.dance))
     expect(page).not_to have_content(com2.comment)
@@ -38,7 +38,7 @@ feature 'delete a dance_comment', %{
   path' do
     sign_in com3.user
     visit dance_comments_path
-    click_link "Delete"
+    click_on "Delete"
 
     expect(page).to have_current_path(dance_path(com3.dance))
     expect(page).not_to have_content(com3.comment)

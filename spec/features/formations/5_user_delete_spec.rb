@@ -17,7 +17,8 @@ feature 'delete a formation', %{
   scenario 'sucessfully delete a formation when admin user' do
     sign_in admin
     visit formation_path(formation.id)
-    click_link "Delete"
+expect(page).to have_selector(:link_or_button, "delete-formation")
+    click_on "Delete"
 
     expect(page).to have_current_path(formations_path)
     expect(page).not_to have_content(formation.name)
@@ -25,6 +26,6 @@ feature 'delete a formation', %{
 
   scenario 'fail to see "Delete" button with non-admin user' do
     visit formation_path(formation.id)
-    expect(page).not_to have_content("Delete")
+    expect(page).to have_no_selector(:link_or_button, "delete-formation")
   end
 end

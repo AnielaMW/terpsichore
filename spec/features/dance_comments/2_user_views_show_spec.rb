@@ -26,7 +26,7 @@ feature 'view dance_comments#show', %{
 
   scenario 'sucessfully view a dance_comments#show from dance_path' do
     visit dance_path(com1.dance_id)
-    click_link com1.comment.to_s
+    click_on com1.comment.to_s
 
     expect(page).to have_current_path(dance_comment_path(com1.id))
   end

@@ -14,7 +14,7 @@ feature 'sign_out of account', %{
   scenario 'sucessfully sign_out when user signs_out' do
     sign_in anne
     visit root_path
-    click_link 'Sign Out'
+    click_on 'Sign Out'
 
     expect(page).to have_content('Signed out successfully.')
     expect(page).to have_content('Sign In')

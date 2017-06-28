@@ -14,8 +14,8 @@ feature 'deletes account', %{
   scenario 'sucessfully delete account' do
     sign_in anne
     visit user_path(anne)
-    click_link 'Edit Profile'
-    click_button 'Cancel My Account'
+    click_on 'Edit Account'
+    click_on 'Cancel My Account'
 
     expect(page).to have_content(
       'Your account has been successfully cancelled.'

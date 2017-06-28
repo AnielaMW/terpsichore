@@ -33,7 +33,7 @@ feature 'view dances#index', %{
     expect(dances[2]).not_to have_content("Choreographed by: ")
 
     visit users_path
-    click_link "Dances"
+    click_on "Dances"
 
     dances = page.all("article.dance-box")
 
@@ -49,7 +49,7 @@ feature 'view dances#index', %{
     expect(dances[2]).not_to have_content("Choreographed by: ")
 
     visit users_path
-    click_link "Terpsichore"
+    click_on "Terpsichore"
 
     dances = page.all("article.dance-box")
 

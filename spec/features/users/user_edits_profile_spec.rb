@@ -22,12 +22,12 @@ feature 'edits account', %{
 
     sign_in anne
     visit user_path(anne)
-    click_link 'Edit Profile'
+    click_on 'Edit Account'
     fill_in 'First Name', with: anne[:first_name].to_s
     fill_in 'Last Name', with: anne[:last_name].to_s
     fill_in 'Email', with: anne[:email].to_s
     fill_in 'Current password', with: anne.password.to_s
-    click_button 'Update'
+    click_on 'Update'
 
     expect(page).to have_content('Your account has been updated successfully.')
   end
@@ -36,11 +36,11 @@ feature 'edits account', %{
 
     sign_in anne
     visit user_path(anne)
-    click_link 'Edit Profile'
+    click_on 'Edit Account'
     fill_in 'First Name', with: ''
     fill_in 'Last Name', with: ''
     fill_in 'Email', with: ''
-    click_button 'Update'
+    click_on 'Update'
 
     expect(page).to have_content('prohibited this user from being saved:')
   end

@@ -65,7 +65,7 @@ feature 'view dance comments', %{
     expect(comments[3]).to have_content(com1.comment_type.name)
 
     visit root_path
-    click_link "Comments"
+    click_on "Comments"
 
     comments = page.all("article.comment-box")
 

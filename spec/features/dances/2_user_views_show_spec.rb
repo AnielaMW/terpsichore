@@ -40,12 +40,12 @@ feature 'view dances#show', %{
   scenario 'sucessfully view a dance#show from dances#index_path and
   root_path' do
     visit dances_path
-    click_link dance1.title.to_s
+    click_on dance1.title.to_s
 
     expect(page).to have_current_path(dance_path(dance1.id))
 
     visit root_path
-    click_link dance1.title.to_s
+    click_on dance1.title.to_s
 
     expect(page).to have_current_path(dance_path(dance1.id))
 
