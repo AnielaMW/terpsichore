@@ -4,10 +4,10 @@ class Profile < ApplicationRecord
   validates :user_id, presence: true
 
   def ima
-    self.dancer || self.caller || self.musician || self.band || self.choreographer || self.composer
+    dancer || caller || musician || band || choreographer || composer
   end
 
   def summary
-    ima || self.about
+    ima || about
   end
 end
