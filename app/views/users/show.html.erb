@@ -2,8 +2,8 @@
   <header>
     <% if @user == current_user %>
       <ul class="user-bar">
-        <li><%= link_to image_tag("icons/svg/user-star", alt:"Edit Profile", title:"Edit Profile", class:"user-icon user-star tooltip"), edit_profile_path(@profile) %></li>
-        <li><%= link_to image_tag("icons/svg/user-settings", alt:"Edit Account", title:"Edit Account", class:"user-icon user-settings"), edit_user_registration_path(@user) %></li>
+        <li><%= link_to image_tag("user-star.svg", alt:"Edit Profile", title:"Edit Profile", class:"user-icon user-star tooltip"), edit_profile_path(@profile) %></li>
+        <li><%= link_to image_tag("user-settings.svg", alt:"Edit Account", title:"Edit Account", class:"user-icon user-settings"), edit_user_registration_path(@user) %></li>
       </ul>
     <% end %>
     <h1><%= @user.user_name %></h1>

@@ -21,11 +21,11 @@
   <footer>
     <ul>
       <% if dance.creator?(current_user) %>
-        <li><%= link_to image_tag("icons/svg/pencil", alt:"Edit", title:"Edit",
+        <li><%= link_to image_tag("pencil.svg", alt:"Edit", title:"Edit",
         class:"icon"), edit_dance_path(dance) %></li>
       <% end %>
       <% if dance.creator?(current_user) || @admin_user %>
-        <li><%= link_to image_tag("icons/svg/trashcan", alt:"Delete", title:"Delete", class:"icon"), dance, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <li><%= link_to image_tag("trashcan.svg", alt:"Delete", title:"Delete", class:"icon"), dance, method: :delete, data: { confirm: 'Are you sure?' } %></li>
       <% end %>
     </ul>
   </footer>
