@@ -2,8 +2,8 @@
   <% if @admin_user %>
     <aside>
       <ul class="user-bar">
-        <li><%= link_to image_tag("trashcan.svg", alt:"Delete", title:"Delete", class:"icon"), @mood, method: :delete, data: { confirm: 'Are you sure?' }, id:"delete-mood" %></li>
-        <li><%= link_to image_tag("pencil.svg", alt:"Edit", title:"Edit",
+        <li><%= link_to image_tag("icons/svg/trashcan.svg", alt:"Delete", title:"Delete", class:"icon"), @mood, method: :delete, data: { confirm: 'Are you sure?' }, id:"delete-mood" %></li>
+        <li><%= link_to image_tag("icons/svg/pencil.svg", alt:"Edit", title:"Edit",
         class:"icon"), edit_mood_path(@mood), id:"edit-mood" %></li>
       </ul>
     </aside>
