@@ -18,13 +18,13 @@ feature 'create a tempo', %{
     with valid information' do
     sign_in anne
     visit tempos_path
-    click_link "New Tempo"
+    click_on "Create Tempo"
 
     expect(page).to have_current_path(new_tempo_path)
 
     fill_in 'Name', with: new_tempo[:name]
     fill_in 'Description', with: new_tempo[:description]
-    click_button "Create Tempo"
+    click_on "Create Tempo"
     visit tempos_path
 
     expect(page).to have_content(new_tempo[:name])
@@ -34,20 +34,22 @@ feature 'create a tempo', %{
     with invalid information' do
     sign_in anne
     visit tempos_path
-    click_link "New Tempo"
+    click_on "Create Tempo"
     fill_in 'Name', with: ""
     fill_in 'Description', with: ""
-    click_button "Create Tempo"
+    click_on "Create Tempo"
 
     expect(page).to have_content("Name can't be blank")
   end
 
   scenario 'fail to create a tempo with non-admin user' do
-    visit new_dance_path
+    visit tempos_path
 
-    expect(page).to have_content(
-      "You need to sign in or sign up before continuing."
-    )
-    expect(page).to have_current_path(new_user_session_path)
+    expect(page).to have_no_selector(:link_or_button, "create-tempo")
+
+    sign_in anne
+    visit comment_types_path
+
+    expect(page).to have_no_selector(:link_or_button, "create-tempo")
   end
 end

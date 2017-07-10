@@ -2,12 +2,13 @@
   <% if @admin_user %>
     <aside>
       <ul class="user-bar">
-        <li><%= link_to 'Edit', edit_tempo_path(@tempo) %></li>
-        <li><%= link_to 'Delete', @tempo, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <li><%= link_to image_tag("icons/svg/trashcan", alt:"Delete", title:"Delete", class:"icon"), @tempo, method: :delete, data: { confirm: 'Are you sure?' }, id:"delete-tempo" %></li>
+        <li><%= link_to image_tag("icons/svg/pencil", alt:"Edit", title:"Edit",
+        class:"icon"), edit_tempo_path(@tempo), id:"edit-tempo" %></li>
       </ul>
     </aside>
   <% end %>
 
-  <h2><%= @tempo.name %></h2>
+  <h1><%= @tempo.name %></h1>
   <p><%= @tempo.description %></p>
 </main>

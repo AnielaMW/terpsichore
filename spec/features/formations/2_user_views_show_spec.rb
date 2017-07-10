@@ -25,12 +25,12 @@ feature 'view formations#show', %{
   scenario 'sucessfully view a formation#show from formations#index_path or
   dance_path' do
     visit formations_path
-    click_link formation.name.to_s
+    click_on formation.name.to_s
 
     expect(page).to have_current_path(formation_path(formation.id))
 
     visit dance_path(dance)
-    click_link formation.name.to_s
+    click_on formation.name.to_s
 
     expect(page).to have_current_path(formation_path(formation.id))
 

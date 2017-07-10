@@ -18,7 +18,7 @@ feature 'delete a comment_type', %{
   scenario 'sucessfully delete a comment_type when admin user' do
     sign_in admin
     visit comment_type_path(comment_type.id)
-    click_link "Delete"
+    click_on "Delete"
 
     expect(page).to have_current_path(comment_types_path)
     expect(page).not_to have_content(comment_type.name)
@@ -27,11 +27,11 @@ feature 'delete a comment_type', %{
   scenario 'fail to see "Delete" button with non-admin user' do
     visit comment_type_path(comment_type.id)
 
-    expect(page).not_to have_content("Delete")
+    expect(page).to have_no_selector(:link_or_button, "delete-comment-type")
 
     sign_in anne
     visit comment_type_path(comment_type.id)
 
-    expect(page).not_to have_content("Delete")
+    expect(page).to have_no_selector(:link_or_button, "delete-comment-type")
   end
 end

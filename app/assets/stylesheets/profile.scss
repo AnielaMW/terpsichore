@@ -1,8 +1,116 @@
 @import "colors";
 
-// user#edit
+// user#show
+.user-show {
+  header {
+    font-family: fantasy;
+
+    .user-bar li {
+      margin-top: 0;
+    }
+  }
+
+  .ima {
+    font-family: fantasy;
+
+    .badges-box{
+      display: -webkit-flex;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-bottom: 10px;
+    }
+
+    .about {
+      padding: 10px;
+
+      p {
+        font-size: 1.5em;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+
+// icon css
+.user-icon {
+  height: 3.5em;
+}
+
+// user edit, new regisration & session forms
+.edit-registration-form,
+.new-registration-form {
+  .forms{
+    .names,
+    .passwords {
+      display: -webkit-flex;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+}
+
+// profile#edit
 .forms {
-  .line-up {
-    float: left;
+  .location {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+  }
+
+  .ima {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .privacy-box {
+    display: grid;
+    margin-left: 20px;
+
+    section {
+      display: -webkit-flex;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+}
+
+//------------User Form Break-------------//
+@media only screen and (max-width: 500px) {
+
+  .edit-registration-form,
+  .new-registration-form,
+  .profile-edit {
+    .names,
+    .passwords,
+    .location {
+      display: block;
+    }
+  }
+
+  .profile-edit {
+    .privacy-box {
+      section {
+        display: grid;
+      }
+    }
+  }
+
+  .edit-registration-form,
+  .new-registration-form,
+  .new-session-form,
+  .profile-edit {
+    .forms{
+      .field>input {
+        width: 100%;
+      }
+    }
   }
 }

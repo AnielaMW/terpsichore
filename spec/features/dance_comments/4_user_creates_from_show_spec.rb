@@ -28,7 +28,7 @@ feature 'create a dance_comment from dance#show', %{
       # How do I test no page reload like it was done in the Phase 9 grocery list
       # ajax challenge?????????????
       # expect_no_page_reload do
-    click_button "Create Dance comment"
+    click_on "Create Dance comment"
 
     expect(page).to have_content(new_dance_comment[:comment])
     expect(page).to have_content(anne.user_name)
@@ -42,7 +42,7 @@ feature 'create a dance_comment from dance#show', %{
     sign_in anne
     visit dance_path(dance)
 
-    click_button "Create Dance comment"
+    click_on "Create Dance comment"
 
     expect(page).to have_content("Comment can't be blank")
   end

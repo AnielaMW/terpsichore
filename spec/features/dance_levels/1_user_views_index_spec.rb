@@ -25,7 +25,7 @@ feature 'view dance_levels#index', %{
     expect(dance_levels[2]).to have_content(level3.name)
 
     visit root_path
-    click_link "Levels"
+    click_on "Levels"
 
     dance_levels = page.all(".info-list article")
 

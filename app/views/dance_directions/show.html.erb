@@ -1,6 +1,6 @@
 <main class="dance-direction-show">
-  <h3>
+  <h2>
     <%= link_to @dance_direction.dance.title, dance_path(@dance_direction.dance) %>
-  </h3>
+  </h2>
   <%= render 'dance_direction_table', dds: [@dance_direction] %>
 </main>

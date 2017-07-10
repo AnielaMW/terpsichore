@@ -24,12 +24,12 @@ feature 'view keys#show', %{
   scenario 'sucessfully view a key#show from keys#index_path or
   dance_path' do
     visit keys_path
-    click_link key.name
+    click_on key.name
 
     expect(page).to have_current_path(key_path(key.id))
 
     visit dance_path(dance)
-    click_link key.name
+    click_on key.name
 
     expect(page).to have_current_path(key_path(key.id))
 

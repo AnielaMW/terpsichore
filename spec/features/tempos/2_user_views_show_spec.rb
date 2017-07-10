@@ -25,12 +25,12 @@ feature 'view tempos#show', %{
   scenario 'sucessfully view a tempo#show from tempos#index_path or
   dance_path' do
     visit tempos_path
-    click_link tempo.name
+    click_on tempo.name
 
     expect(page).to have_current_path(tempo_path(tempo.id))
 
     visit dance_path(dance)
-    click_link tempo.name
+    click_on tempo.name
 
     expect(page).to have_current_path(tempo_path(tempo.id))
 

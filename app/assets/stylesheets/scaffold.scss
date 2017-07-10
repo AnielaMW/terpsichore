@@ -23,7 +23,7 @@ body {
 
 h1 {
   font-size: 2.2em; // 30px; //
-  margin: 15px 0;
+  margin: 15px 0 20px 0;
 }
 
 h2 {
@@ -58,7 +58,7 @@ input {
 }
 
 main {
-  padding: 0 2.040816%; // 0 20px; //
+  padding: 0 2.75%; // 0 20px; //
 }
 
 a {
@@ -67,7 +67,7 @@ a {
 }
 
 a:hover {
-  color: #00008b;
+  color: $color-gold;
   text-decoration: underline;
 }
 
@@ -85,7 +85,7 @@ header>a {
 
 // Sitewide Header
 .top-bar {
-  background-color: $color-red;
+  background-color: $color-teal;
   border-bottom: 3px solid $color-black;
   color: $color-white;
   padding: 1.020408% 2.040816%; // 10px 20px; //
@@ -95,36 +95,56 @@ header>a {
 header aside {
   height: 60px;
 
-  h1 {
-    float: left;
+  .my-terp-logo {
     padding-top: 1px;
+    width: 400px;
   }
 
   ul {
-    float: right;
-    padding-top: 31px;
+    padding-top: 50px;
   }
 
   li {
     display: inline;
-    font-size: 12px;
+    font-size: 1em;
     padding: 0 8px;
   }
 }
 
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+}
+
 // Sitewide top nav bar
-.top-nav-bar {
-  text-align: center;
-  background-color: $color-red;
+.nav-bar {
   color: $color-white;
-  margin-bottom: 20px;
-  padding: 1.020408% 2.040816%; // 10px 20px; //
+  font-size: 1.5em;
+  order: 2;
+  padding: 2px 15px 2px 5px;
+  text-align: center;
   text-shadow: 1px 3px 1px $color-black;
 
-  li{
-    display: inline;
+  .eliza-brun {
+    height: 250px;
+    left: 0;
+  }
+
+  li {
+    background-color: $color-teal;
+    border: 2px solid $color-black;
+    display: block;
+    margin: 5px 0;
     padding: 5px;
-    margin: 10px;
+  }
+
+  li:hover {
+    background-color: $color-gold;
+
+    a:hover{
+      color: $color-white;
+      text-decoration: none;
+    }
   }
 }
 
@@ -134,17 +154,36 @@ header aside {
   float: right;
   font-size: 12px;
   margin-top: 14px;
-  padding-right: 8px;
+  margin-right: 8px;
+}
+
+.main-data {
+  width: 100%;
+}
+
+// Sitewide general
+
+fieldset {
+  border: 1px solid $color-black;
+  margin-bottom: 15px;
+
+  legend{
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 5px;
+    padding: 0 5px;
+  }
 }
 
 // Sitewide bottom lines
 .bottom-line {
   text-align: center;
+  vertical-align: bottom;
 }
 
 // Sitewide Footer
 .bottom-bar {
-  background-color: $color-red;
+  background-color: $color-teal;
   border-top: 3px solid $color-black;
   color: $color-white;
   margin-top: 20px;
@@ -152,26 +191,88 @@ header aside {
   text-shadow: 1px 3px 1px $color-black;
 
   h1 {
-    font-size: 1.4285em;  // 20px; //
+    font-size: 1.5em;
     font-style: italic;
     font-weight: normal;
     text-align: center;
   }
 }
 
+// Sitewide icon css
+.icon {
+  height: 20px;
+}
+
+.help-icon {
+  height: 15px;
+  vertical-align: sub;
+}
+
 //-------------------------------MEDIA QUERIES-------------------------------//
 
 //--Tablet Portrait and Smart Phone Landscape--//
-@media only screen and (min-width: 500px) and (max-width: 850px) {
+@media only screen and (max-width: 850px) {
 
   // Basic Sitewide CSS Styles
   html {
     font-size: 15px;
   }
 
+  // Sitewide Header
+  header aside {
+    height: 60px;
+
+    .my-terp-logo {
+      float: left;
+      padding-top: 1px;
+      width: 300px;
+    }
+
+    ul {
+      padding-top: 36px;
+    }
+  }
+
+  .flex-container {
+    display: block;
+  }
+
   // Sitewide top nav bar
-  .top-nav-bar li{
-    margin: 5px;
+  .nav-bar {
+    align-items: center;
+    background-color: $color-teal;
+    color: $color-white;
+    display: -webkit-flex;
+    display: flex;
+    margin-bottom: 20px;
+    padding: 1.020408% 2.040816%; // 10px 20px; //
+    text-align: center;
+    text-shadow: 1px 3px 1px $color-black;
+
+    .eliza-brun {
+      height: 150px;
+      order: 2;
+    }
+
+    ul {
+      margin-top: 0;
+      order: 1;
+
+      li{
+        border: none;
+        display: inline-block;
+        padding: 3px 20px;
+      }
+
+      li:hover {
+        background-color: $color-teal;
+
+        a:hover{
+          color: $color-gold;
+          text-decoration: underline;
+        }
+      }
+    }
   }
 
   // Sitewide Footer
@@ -181,16 +282,55 @@ header aside {
 }
 
 //------------Smart Phone Portrait-------------//
-@media only screen and (max-width: 499px) {
+@media only screen and (max-width: 500px) {
 
   // Basic Sitewide CSS Styles
   html {
     font-size: 14px;
   }
 
+  // Sitewide Header
+  header aside {
+    height: 60px;
+
+    .my-terp-logo {
+      float: left;
+      margin-top: 10px;
+      padding-top: 1px;
+      width: 200px;
+    }
+
+    ul {
+      padding-top: 31px;
+    }
+  }
+
   // Sitewide top nav bar
-  .top-nav-bar li{
-    margin: 0;
+  .eliza-brun {
+    display: none;
+  }
+
+  // Sitewide Footer
+  .bottom-bar {
+    margin-top: 10px;
+  }
+}
+
+//------------Smart Phone Portrait-------------//
+@media only screen and (max-width: 370px) {
+
+  // Basic Sitewide CSS Styles
+  // Sitewide Header
+  header aside {
+    ul {
+      padding-top: 15px;
+    }
+
+    li {
+      display: block;
+      font-size: 12px;
+      padding: 1px 8px;
+    }
   }
 
   // Sitewide Footer

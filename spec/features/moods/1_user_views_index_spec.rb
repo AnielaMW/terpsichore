@@ -25,7 +25,7 @@ feature 'view moods#index', %{
     expect(moods[2]).to have_content(mood1.name)
 
     visit root_path
-    click_link "Moods"
+    click_on "Moods"
 
     moods = page.all(".info-list article")
 

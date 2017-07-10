@@ -17,7 +17,8 @@ feature 'delete a tempo', %{
   scenario 'sucessfully delete a tempo when admin user' do
     sign_in admin
     visit tempo_path(tempo.id)
-    click_link "Delete"
+expect(page).to have_selector(:link_or_button, "delete-tempo")
+    click_on "Delete"
 
     expect(page).to have_current_path(tempos_path)
     expect(page).not_to have_content(tempo.name)
@@ -25,6 +26,6 @@ feature 'delete a tempo', %{
 
   scenario 'fail to see "Delete" button with non-admin user' do
     visit tempo_path(tempo.id)
-    expect(page).not_to have_content("Delete")
+    expect(page).to have_no_selector(:link_or_button, "delete-tempo")
   end
 end

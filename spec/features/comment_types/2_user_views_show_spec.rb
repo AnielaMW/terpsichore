@@ -24,7 +24,7 @@ feature 'view comment_types#show', %{
   scenario 'sucessfully view a comment_type#show
   from comment_types#index_path' do
     visit comment_types_path
-    click_link comment_type.name.to_s
+    click_on comment_type.name.to_s
 
     expect(page).to have_current_path(comment_type_path(comment_type.id))
   end

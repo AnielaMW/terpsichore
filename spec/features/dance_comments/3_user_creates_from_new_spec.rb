@@ -20,14 +20,14 @@ feature 'create a dance_comment from dance_comment#new', %{
     with valid information from dance_comment#new' do
     sign_in anne
     visit dance_path(dance)
-    click_link "Create Comment"
+    click_on "Create Comment"
 
     expect(page).to have_current_path(new_dance_dance_comment_path(dance))
 
     # How to fill_in in a test if I get rid of the Comment label?
     fill_in 'Comment', with: new_dance_comment[:comment].to_s
     select comment_type.name.to_s, from: 'Type'
-    click_button "Create Dance comment"
+    click_on "Create Dance comment"
 
     expect(page).to have_content(new_dance_comment[:comment])
     expect(page).to have_content(anne.user_name)
@@ -39,8 +39,8 @@ feature 'create a dance_comment from dance_comment#new', %{
     with invalid information from dance_comment#new' do
     sign_in anne
     visit dance_path(dance)
-    click_link "Create Comment"
-    click_button "Create Dance comment"
+    click_on "Create Comment"
+    click_on "Create Dance comment"
 
     expect(page).to have_content("Comment can't be blank")
   end
@@ -48,7 +48,7 @@ feature 'create a dance_comment from dance_comment#new', %{
   scenario 'fail to create a dance_comment with unauthenticated user from
     dance_comment#new' do
     visit dance_path(dance)
-    click_link "Create Comment"
+    click_on "Create Comment"
 
     expect(page).to have_content(
       "You need to sign in or sign up before continuing."

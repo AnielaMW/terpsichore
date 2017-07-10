@@ -18,12 +18,12 @@ feature 'create a mood', %{
     with valid information' do
     sign_in anne
     visit moods_path
-    click_link "New Mood"
+    click_on "Create Mood"
 
     expect(page).to have_current_path(new_mood_path)
 
     fill_in 'Name', with: new_mood[:name]
-    click_button "Create Mood"
+    click_on "Create Mood"
     visit moods_path
 
     expect(page).to have_content(new_mood[:name])
@@ -33,15 +33,15 @@ feature 'create a mood', %{
     with invalid information' do
     sign_in anne
     visit moods_path
-    click_link "New Mood"
+    click_on "Create Mood"
     fill_in 'Name', with: ""
-    click_button "Create Mood"
+    click_on "Create Mood"
 
     expect(page).to have_content("Name can't be blank")
   end
 
   scenario 'fail to create a mood with unauthenticated user' do
-    visit new_dance_path
+    visit new_mood_path
 
     expect(page).to have_content(
       "You need to sign in or sign up before continuing."

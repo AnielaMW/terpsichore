@@ -22,14 +22,14 @@ feature 'create account', %{
 
   scenario 'sucessfully create account when user enters valid information' do
     visit root_path
-    click_link 'Sign Up'
+    click_on 'Sign Up'
     fill_in 'First Name', with: william[:first_name].to_s
     fill_in 'Last Name', with: william[:last_name].to_s
     fill_in 'Username', with: william[:user_name].to_s
     fill_in 'Email', with: william[:email].to_s
     fill_in 'Password', with: william[:password].to_s
     fill_in 'Confirm Password', with: william[:password].to_s
-    click_button 'Sign Up'
+    click_on 'Create Account'
 
     expect(page).to have_content('Welcome! You have signed up successfully.')
     expect(page).to have_content('Sign Out')
@@ -37,8 +37,8 @@ feature 'create account', %{
 
   scenario 'fails to create account when user enters invalid information' do
     visit root_path
-    click_link 'Sign Up'
-    click_button 'Sign Up'
+    click_on 'Sign Up'
+    click_on 'Create Account'
 
     expect(page).to have_content('
     errors prohibited this user from being saved:')
@@ -47,14 +47,14 @@ feature 'create account', %{
 
   scenario 'fails to create account when user enters an existing username' do
     visit root_path
-    click_link 'Sign Up'
+    click_on 'Sign Up'
     fill_in 'First Name', with: william[:first_name].to_s
     fill_in 'Last Name', with: william[:last_name].to_s
     fill_in 'Username', with: william[:user_name].to_s
     fill_in 'Email', with: william[:email].to_s
     fill_in 'Password', with: william[:password].to_s
     fill_in 'Confirm Password', with: 'playingbothsides'
-    click_button 'Sign Up'
+    click_on 'Create Account'
 
     expect(page).to have_content("Password confirmation doesn't match")
     expect(page).to have_content('Sign Up')
@@ -63,14 +63,14 @@ feature 'create account', %{
   scenario 'fails to create account when user password and
   confirm password do not match' do
     visit root_path
-    click_link 'Sign Up'
+    click_on 'Sign Up'
     fill_in 'First Name', with: william[:first_name].to_s
     fill_in 'Last Name', with: william[:last_name].to_s
     fill_in 'Username', with: william[:alt_user_name].to_s
     fill_in 'Email', with: william[:email].to_s
     fill_in 'Password', with: william[:password].to_s
     fill_in 'Confirm Password', with: 'playingbothsides'
-    click_button 'Sign Up'
+    click_on 'Create Account'
 
     expect(page).to have_content("Password confirmation doesn't match")
     expect(page).to have_content('Sign Up')

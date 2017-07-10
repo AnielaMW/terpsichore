@@ -2,12 +2,12 @@
   <% if @admin_user %>
     <aside>
       <ul class="user-bar">
-        <li><%= link_to 'Edit', edit_dance_level_path(@dance_level) %></li>
-        <li><%= link_to 'Delete', @dance_level, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <li><%=link_to image_tag("icons/svg/trashcan", alt:"Delete", title:"Delete", class:"icon"), @dance_level, method: :delete, data: { confirm: 'Are you sure?' }, id:"delete-dance-level" %></li>
+        <li><%= link_to image_tag("icons/svg/pencil", alt:"Edit", title:"Edit", class:"icon"), edit_dance_level_path(@dance_level), id:"edit-dance-level" %></li>
       </ul>
     </aside>
   <% end %>
 
-  <h2><%= @dance_level.name %></h2>
+  <h1><%= @dance_level.name %></h1>
   <p><%= @dance_level.description %></p>
 </main>

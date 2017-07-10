@@ -7,13 +7,14 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_include_tag 'application' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
   </head>
   <body>
     <!-- nav bar -->
     <header id="top-bar" class="top-bar" data-topbar>
       <aside class="main-user-bar">
-        <h1 class="left"><%= link_to "My Terpsichore", root_path %></h1>
+        <%= link_to image_tag("My_Terp.svg", alt: "My Terpsichore Logo", class:"my-terp-logo"), root_path %>
 
         <ul class="right">
           <% if user_signed_in? %>
@@ -28,29 +29,34 @@
       </aside>
     </header>
 
-    <!-- top nav bar -->
-    <div class="top-nav-bar">
-      <ul>
-        <li><%= link_to "Members", users_path %></li>
-        <li><%= link_to "Dances", dances_path %></li>
-        <li><%= link_to "Comments", dance_comments_path %></li>
-        <li><%= link_to "Comment Types", comment_types_path %></li>
-        <li><%= link_to "Formations", formations_path %></li>
-        <li><%= link_to "Keys", keys_path %></li>
-        <li><%= link_to "Levels", dance_levels_path %></li>
-        <li><%= link_to "Meters", meters_path %></li>
-        <li><%= link_to "Moods", moods_path %></li>
-        <li><%= link_to "Tempos", tempos_path %></li>
-      </ul>
+    <div class="flex-container">
+
+      <!-- top nav bar -->
+      <div class="nav-bar flex-item">
+        <%= image_tag("Elisabeth_Louise_Vigee_Le_Brun.png", alt:"Portrait of Elisabeth Louise Vigee Le Brun as Terpsichore", class:"eliza-brun") %>
+        <ul class="">
+          <li><%= link_to "Members", users_path %></li>
+          <li><%= link_to "Dances", dances_path %></li>
+          <li><%= link_to "Comments", dance_comments_path %></li>
+          <li><%= link_to "Comment Types", comment_types_path %></li>
+          <li><%= link_to "Formations", formations_path %></li>
+          <li><%= link_to "Keys", keys_path %></li>
+          <li><%= link_to "Levels", dance_levels_path %></li>
+          <li><%= link_to "Meters", meters_path %></li>
+          <li><%= link_to "Moods", moods_path %></li>
+          <li><%= link_to "Tempos", tempos_path %></li>
+        </ul>
+      </div>
+
+      <div class="main-data flex-item">
+        <!-- flash messages -->
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
+        <!-- main content -->
+        <%= yield %>
+      </div>
     </div>
-
-    <!-- flash messages -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <!-- main content -->
-    <%= yield %>
-
 
     <footer class="bottom-bar">
       <h1>Dance like no one is watching.</h1>

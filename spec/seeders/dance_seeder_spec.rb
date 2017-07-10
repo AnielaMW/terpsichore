@@ -1,10 +1,10 @@
 require "rails_helper"
-require_relative "../../db/seeders/dances_seeder"
+require_relative "../../db/seeders/dev_seeders/dances_seeder"
 
 RSpec.describe DanceDevSeeder do
   it "doesn't create duplicate records on multiple runs" do
     DanceDevSeeder.seed!
-    
+
     initial_dance_count = Dance.count
     initial_dl_count = DanceLevel.count
     initial_f_count = Formation.count

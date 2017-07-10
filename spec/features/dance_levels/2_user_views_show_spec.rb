@@ -25,12 +25,12 @@ feature 'view dance_levels#show', %{
   scenario 'sucessfully view a dance_level#show from dance_levels#index_path or
   dance_path' do
     visit dance_levels_path
-    click_link dance_level.name
+    click_on dance_level.name
 
     expect(page).to have_current_path(dance_level_path(dance_level.id))
 
     visit dance_path(dance)
-    click_link dance_level.name
+    click_on dance_level.name
 
     expect(page).to have_current_path(dance_level_path(dance_level.id))
 

@@ -17,7 +17,7 @@ feature 'delete a key', %{
   scenario 'sucessfully delete a key when admin user' do
     sign_in admin
     visit key_path(key.id)
-    click_link "Delete"
+    click_on "Delete"
 
     expect(page).to have_current_path(keys_path)
     expect(page).not_to have_content(key.name)
@@ -25,6 +25,6 @@ feature 'delete a key', %{
 
   scenario 'fail to see "Delete" button with non-admin user' do
     visit key_path(key.id)
-    expect(page).not_to have_content("Delete")
+    expect(page).to have_no_selector(:link_or_button, "delete-key")
   end
 end

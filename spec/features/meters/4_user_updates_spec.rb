@@ -19,12 +19,12 @@ feature 'update a meter', %{
   scenario 'admin user sucessfully update meter with valid information' do
     sign_in admin
     visit meter_path(meter.id)
-    click_link "Edit"
+    click_on "Edit"
 
     expect(page).to have_current_path(edit_meter_path(meter))
 
     fill_in 'Name', with: changes[:name].to_s
-    click_button "Update"
+    click_on "Update"
 
     expect(page).to have_current_path(meter_path(meter.id))
     expect(page).to have_content(changes[:name])
@@ -33,9 +33,9 @@ feature 'update a meter', %{
   scenario 'admin user fail to update meter with invalid information' do
     sign_in admin
     visit meter_path(meter.id)
-    click_link "Edit"
+    click_on "Edit"
     fill_in 'Name', with: ""
-    click_button "Update"
+    click_on "Update"
 
     expect(page).to have_content("Name can't be blank")
   end
@@ -43,6 +43,6 @@ feature 'update a meter', %{
   scenario 'fail to see "Edit" button with non-admin user' do
     visit meter_path(meter.id)
 
-    expect(page).not_to have_content("Edit")
+    expect(page).to have_no_selector(:link_or_button, "edit-meter")
   end
 end

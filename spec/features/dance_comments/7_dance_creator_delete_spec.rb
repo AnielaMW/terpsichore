@@ -18,7 +18,7 @@ feature 'delete a dance_comment', %{
   dance_comment_path' do
     sign_in dance.user
     visit dance_comment_path(com1.id)
-    click_link "Delete"
+    click_on "Delete"
 
     expect(page).to have_current_path(dance_path(com1.dance))
     expect(page).not_to have_content(com1.comment)
@@ -31,8 +31,8 @@ feature 'delete a dance_comment', %{
 
     comment_boxes = page.all("article.comment-box")
 
-    expect(comment_boxes[0]).to have_content("Delete")
-    expect(comment_boxes[1]).to have_content("Delete")
+    expect(comment_boxes[0]).to have_selector(:link_or_button, "delete-comment")
+    expect(comment_boxes[1]).to have_selector(:link_or_button, "delete-comment")
   end
 
   scenario 'dance_creator sucessfully delete a dance_comment from the
@@ -42,7 +42,7 @@ feature 'delete a dance_comment', %{
 
     comment_boxes = page.all("article.comment-box")
 
-    expect(comment_boxes[0]).to have_content("Delete")
-    expect(comment_boxes[1]).to have_content("Delete")
+    expect(comment_boxes[0]).to have_selector(:link_or_button, "delete-comment")
+    expect(comment_boxes[1]).to have_selector(:link_or_button, "delete-comment")
   end
 end

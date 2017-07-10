@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :admin_user?
   before_action :users, only: [:index]
   before_action :set_user, only: [:show]
+  before_action :set_profile, only: [:show]
 
   def index
   end
@@ -28,5 +29,14 @@ class UsersController < ApplicationController
 
   def list_dcomments
     @user.dance_comments.order(created_at: :desc)
+  end
+
+  def set_profile
+    if @user.profile
+      @profile = @user.profile
+    else
+      @profile = Profile.new(user_id: @user.id)
+      @profile.save
+    end
   end
 end

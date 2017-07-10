@@ -25,8 +25,7 @@ class NewComment{
 
         <footer>
           <ul>
-            <li><a href="/dance_comments/${this.id}/edit">Edit</a></li>
-            <li><a href="">Delete</a></li>
+            <li>Refresh screen to edit or delete your comment.</li>
           </ul>
         </footer>
       </article>

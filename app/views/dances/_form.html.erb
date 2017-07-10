@@ -25,33 +25,33 @@
       <div class="d-info-field left">
         <%= f.label :formation_id, "Formation" %>
         <%= f.collection_select :formation_id, @formation_collection, :id, :name, required: true %>
-        <%= link_to "*", formations_path, target: '_blank', :class => "new-button" %>
+        <%= link_to image_tag("icons/svg/question-mark", alt:"Help", title:"Help", class:"help-icon"), formations_path, target: '_blank' %>
       </div>
 
       <div class="d-info-field right">
         <%= f.label :meter_id, "Meter" %>
         <%= f.collection_select :meter_id, @meter_collection, :id, :name, required: true %>
-        <%= link_to "*", meters_path, target: '_blank', :class => "new-button" %>
+        <%= link_to image_tag("icons/svg/question-mark", alt:"Help", title:"Help", class:"help-icon"), meters_path, target: '_blank' %>
       </div>
 
       <!-- Eventually need to be able to select blank as an option as these fields are not required -->
       <div class="d-info-field left">
         <%= f.label :key_id, "Key" %>
         <%= f.collection_select :key_id, @key_collection, :id, :name %>
-        <%= link_to "*", keys_path, target: '_blank', :class => "new-button" %>
+        <%= link_to image_tag("icons/svg/question-mark", alt:"Help", title:"Help", class:"help-icon"), keys_path, target: '_blank' %>
       </div>
 
       <div class="d-info-field right">
         <%= f.label :tempo_id, "Tempo" %>
         <%= f.collection_select :tempo_id, @tempo_collection, :id, :name %>
-        <%= link_to "*", tempos_path, target: '_blank', :class => "new-button" %>
+        <%= link_to image_tag("icons/svg/question-mark", alt:"Help", title:"Help", class:"help-icon"), tempos_path, target: '_blank' %>
       </div>
 
       <!-- Eventually want to be able to select one from a list of radio buttons rather than drop down. -->
       <div class="d-info-field left">
         <%= f.label :dance_level_id, "Level" %>
         <%= f.collection_select :dance_level_id, @level_collection, :id, :name %>
-        <%= link_to "*", dance_levels_path, target: '_blank', :class => "new-button" %>
+        <%= link_to image_tag("icons/svg/question-mark", alt:"Help", title:"Help", class:"help-icon"), dance_levels_path, target: '_blank' %>
       </div>
 
       <!-- Eventually need to be able to select multiple MOODS from a list of radio buttons rather than drop down -->

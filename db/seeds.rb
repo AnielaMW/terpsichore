@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require_relative 'seeders/user_seeder'
-require_relative 'seeders/dances_seeder'
-require_relative 'seeders/dance_directions_seeder'
-require_relative 'seeders/comment_types_seeder'
+require_relative 'seeders/dev_seeders/user_seeder'
+require_relative 'seeders/dev_seeders/dances_seeder'
+require_relative 'seeders/dev_seeders/dance_directions_seeder'
+require_relative 'seeders/dev_seeders/comment_types_seeder'
 
 if Rails.env.development?
   UserDevSeeder.seed!

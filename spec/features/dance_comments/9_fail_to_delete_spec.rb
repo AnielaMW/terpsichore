@@ -19,39 +19,39 @@ feature 'fail to delete a dance_comment', %{
   scenario 'fail to see "Delete" button with unauthenticated user from
   dance_comment_path' do
     visit dance_comment_path(com1.id)
-    expect(page).not_to have_content("Delete")
+    expect(page).to have_no_selector(:link_or_button, "delete-comment")
   end
 
   scenario 'fail to see "Delete" button if authenticated user is not the creator
   from dance_comment_path' do
     sign_in clay
     visit dance_comment_path(com1.id)
-    expect(page).not_to have_content("Delete")
+    expect(page).to have_no_selector(:link_or_button, "delete-comment")
   end
 
   scenario 'fail to see "Delete" button with unauthenticated user from
   dance_path' do
     visit dance_path(com2.dance_id)
-    expect(page).not_to have_content("Delete")
+    expect(page).to have_no_selector(:link_or_button, "delete-comment")
   end
 
   scenario 'fail to see "Delete" button if authenticated user is not the creator
   from dance_path' do
     sign_in clay
     visit dance_path(com2.dance_id)
-    expect(page).not_to have_content("Delete")
+    expect(page).to have_no_selector(:link_or_button, "delete-comment")
   end
 
   scenario 'fail to see "Delete" button with unauthenticated user from
   dance_comments_path' do
     visit dance_comments_path
-    expect(page).not_to have_content("Delete")
+    expect(page).to have_no_selector(:link_or_button, "delete-comment")
   end
 
   scenario 'fail to see "Delete" button if authenticated user is not the creator
   from dance_comments_path' do
     sign_in clay
     visit dance_comments_path
-    expect(page).not_to have_content("Delete")
+    expect(page).to have_no_selector(:link_or_button, "delete-comment")
   end
 end

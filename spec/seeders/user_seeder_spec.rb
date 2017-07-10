@@ -1,5 +1,5 @@
 require "rails_helper"
-require_relative "../../db/seeders/user_seeder"
+require_relative "../../db/seeders/dev_seeders/user_seeder"
 
 RSpec.describe UserDevSeeder do
   it "doesn't create duplicate records on multiple runs" do

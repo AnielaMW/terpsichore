@@ -28,7 +28,7 @@ feature 'view comment_types#index', %{
     expect(comment_types[2]).to have_content(type1.name)
 
     visit root_path
-    click_link "Comment Types"
+    click_on "Comment Types"
 
     comment_types = page.all(".info-list article")
 

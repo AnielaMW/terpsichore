@@ -25,7 +25,7 @@ feature 'view tempos#index', %{
     expect(tempos[2]).to have_content(tempo3.name)
 
     visit root_path
-    click_link "Tempos"
+    click_on "Tempos"
 
     tempos = page.all(".info-list article")
 

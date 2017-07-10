@@ -17,7 +17,7 @@ feature 'delete a meter', %{
   scenario 'sucessfully delete a meter when admin user' do
     sign_in admin
     visit meter_path(meter.id)
-    click_link "Delete"
+    click_on "Delete"
 
     expect(page).to have_current_path(meters_path)
     expect(page).not_to have_content(meter.name)
@@ -25,6 +25,6 @@ feature 'delete a meter', %{
 
   scenario 'fail to see "Delete" button with non-admin user' do
     visit meter_path(meter.id)
-    expect(page).not_to have_content("Delete")
+    expect(page).to have_no_selector(:link_or_button, "delete-meter")
   end
 end

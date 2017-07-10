@@ -18,12 +18,12 @@ feature 'create a meter', %{
     with valid information' do
     sign_in anne
     visit meters_path
-    click_link "New Meter"
+    click_on "Create Meter"
 
     expect(page).to have_current_path(new_meter_path)
 
     fill_in 'Name', with: new_meter[:name].to_s
-    click_button "Create Meter"
+    click_on "Create Meter"
     visit meters_path
 
     expect(page).to have_content(new_meter[:name])
@@ -33,9 +33,9 @@ feature 'create a meter', %{
     with invalid information' do
     sign_in anne
     visit meters_path
-    click_link "New Meter"
+    click_on "Create Meter"
     fill_in 'Name', with: ""
-    click_button "Create Meter"
+    click_on "Create Meter"
 
     expect(page).to have_content(
       "Name can't be blank"
@@ -43,7 +43,7 @@ feature 'create a meter', %{
   end
 
   scenario 'fail to create a meter with unauthenticated user' do
-    visit new_dance_path
+    visit new_meter_path
 
     expect(page).to have_content(
       "You need to sign in or sign up before continuing."
