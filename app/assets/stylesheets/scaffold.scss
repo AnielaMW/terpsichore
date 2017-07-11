@@ -139,7 +139,7 @@ header aside {
   }
 
   li:hover {
-    background-color: $color-gold;
+    background: linear-gradient(to right, $color-dark-gold, $color-gold);
 
     a:hover{
       color: $color-white;
@@ -265,7 +265,7 @@ fieldset {
       }
 
       li:hover {
-        background-color: $color-teal;
+        background: $color-teal;
 
         a:hover{
           color: $color-gold;
