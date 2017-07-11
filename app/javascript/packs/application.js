@@ -16,6 +16,7 @@
 
 import { addBlankDirection } from '../dance_directions/add';
 import { removeDirection } from '../dance_directions/remove';
+import { deleteDirection } from '../dance_directions/delete';
 import { submitDCClick } from '../dance_comments/new';
 import { submitDDDClick } from '../dances/new';
 import { submitDDDEditClick } from '../dances/edit';
@@ -27,7 +28,7 @@ $(document).ready(() => {
   $('#dance-new').on('click', '#dd-add', addBlankDirection);
   $('#dance-new').on('click', '#dd-remove', removeDirection);
   $('#dance-edit').on('click', '#dd-add', addBlankDirection);
-  $('#dance-edit').on('click', '#dd-remove', removeDirection);
+  $('#dance-edit').on('click', '#dd-remove', deleteDirection);
   $('#dance-show #dc-form').submit(submitDCClick);
   $('form#new_dance').submit(submitDDDClick);
   $('form.edit_dance').submit(submitDDDEditClick);
