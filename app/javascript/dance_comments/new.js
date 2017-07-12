@@ -18,14 +18,23 @@ class NewComment{
   toHTML() {
     return `<li>
       <article class="comment-box">
-        <h3>
+        <h2>
           <a href="/users/${this.user_id}">${this.user}</a> posted a <a href="/comment_types/${this.comment_type_id}">${this.comment_type}</a> for <a href="/dances/${this.dance_id}">${this.dance}</a>
-        </h3>
+        </h2>
         <p><a href="/dance_comments/${this.id}">${this.comment}</a></p>
 
         <footer>
           <ul>
-            <li>Refresh screen to edit or delete your comment.</li>
+            <li>
+              <a id="edit-comment" href="/dance_comments/${this.id}/edit">
+                <img alt="Edit" title="Edit" class="icon" src="/assets/icons/svg/pencil.svg">
+              </a>
+            </li>
+            <li>
+              <a data-confirm="Are you sure?" class="remove-comment" id="delete-comment" rel="nofollow" data-method="delete" href="/dance_comments/${this.id}">
+                <img alt="Delete" title="Delete" class="icon" src="/assets/icons/svg/trashcan.svg">
+              </a>
+            </li>
           </ul>
         </footer>
       </article>
