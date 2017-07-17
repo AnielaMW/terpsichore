@@ -1,6 +1,7 @@
 <td class="id hidden-all">
   <input type="text" name="id" value="<%= dd.id %>" >
 </td>
+
 <td class="seq hidden-label">
   <label for="sequence">Sequence</label>
   <input type="text" name="sequence" value="<%= dd.sequence %>" required>
@@ -24,4 +25,8 @@
 <td class="pos hidden-label">
   <label for="position">Position</label>
   <input type="text" name="position" value="<%= dd.position %>" >
+</td>
+
+<td class="but hidden-label">
+  <button type="button" id="dd-remove" class="ref-button">-</button>
 </td>

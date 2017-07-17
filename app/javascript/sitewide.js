@@ -6,4 +6,8 @@ let prependTarget = (target, text) => {
   target.prepend(text);
 };
 
-export { appendTarget, prependTarget };
+let removeTarget = (target) => {
+  target.remove();
+};
+
+export { appendTarget, prependTarget, removeTarget };
