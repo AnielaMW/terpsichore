@@ -6,8 +6,7 @@
 
 This program is a repository and social network for dancers, callers, and musicians of English Country Dance.
 
-* To Use
-Go to https://my-terpsichore.herokuapp.com
+* To use, go to https://my-terpsichore.herokuapp.com
 
 * New Features
 
