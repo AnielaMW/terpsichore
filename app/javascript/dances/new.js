@@ -1,4 +1,5 @@
 import { submitDDAdd } from '../dance_directions/new';
+import { submitDMAdd } from '../moods/new';
 
 class NewDance{
   constructor() {
@@ -13,6 +14,7 @@ class NewDance{
     this.tempo_id = $('#dance_tempo_id').val();
     this.dance_level_id = $('#dance_dance_level_id').val();
     this.user_id = $('#user-id').text();
+    this.moods = [];
     this.directions = [];
   }
 
@@ -27,9 +29,16 @@ let dividNewDirections = (dds, newDan) => {
   });
 };
 
+let dividDanMoods = (dms, newDan) => {
+  dms.each((dm) => {
+    newDan.moods.push(submitDMAdd(dms[dm], newDan));
+  });
+};
+
 let submitDDDClick = (event) => {
   event.preventDefault();
 
+  let danMoods = $('#moods-ids>input:checked');
   let dirListAdd = $('tr.dd-new');
   let newDan = new NewDance();
 
@@ -43,6 +52,7 @@ let submitDDDClick = (event) => {
 
   let createDance = (response) => {
     newDan.newId(response);
+    dividDanMoods(danMoods, newDan);
     dividNewDirections(dirListAdd, newDan);
     window.location = `/dances/${newDan.id}`;
   };
