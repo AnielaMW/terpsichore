@@ -65,7 +65,7 @@ class DancesController < ApplicationController
   end
 
   def moods?
-    @dance_moods ||= @dance.moods.order(:name).map{|m| m.name}.join(', ')
+    @dance_moods ||= @dance.dance_moods
   end
 
   def directions?
