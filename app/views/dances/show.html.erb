@@ -51,7 +51,7 @@
   <% if @dance.moods && @dance.moods != "" %>
     <div class="d-info-field right">
       <h6>Moods: </h6>
-      <p> <%= @dance_moods %> </p>
+      <p> <%= @dance.moods.map{|m| m.name}.join(', ') %> </p>
     </div>
   <% end %>
 
