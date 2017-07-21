@@ -29,16 +29,18 @@ let dividNewDirections = (dds, newDan) => {
   });
 };
 
-let dividDanMoods = (dms, newDan) => {
-  dms.each((dm) => {
-    newDan.moods.push(submitDMAdd(dms[dm], newDan));
+let dividNewDanMoods = (dms, newDan) => {
+  dms.forEach((dm) => {
+    newDan.moods.push(submitDMAdd(dm, newDan));
   });
 };
 
 let submitDDDClick = (event) => {
   event.preventDefault();
 
-  let danMoods = $('#moods-ids>input:checked');
+  let newDanMoods = $('#moods-ids>input:checked').map(function(_, dm) {
+    return $(dm).val();
+  }).get();
   let dirListAdd = $('tr.dd-new');
   let newDan = new NewDance();
 
@@ -52,7 +54,7 @@ let submitDDDClick = (event) => {
 
   let createDance = (response) => {
     newDan.newId(response);
-    dividDanMoods(danMoods, newDan);
+    dividNewDanMoods(newDanMoods, newDan);
     dividNewDirections(dirListAdd, newDan);
     window.location = `/dances/${newDan.id}`;
   };
@@ -60,4 +62,4 @@ let submitDDDClick = (event) => {
   saveDance();
 };
 
-export { submitDDDClick, NewDance, dividNewDirections };
+export { submitDDDClick, NewDance, dividNewDirections, dividNewDanMoods };
