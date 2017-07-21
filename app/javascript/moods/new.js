@@ -1,7 +1,7 @@
 class NewMood {
   constructor(dm, danId) {
     this.dance_id = danId;
-    this.mood_id = dm.value;
+    this.mood_id = dm;
   }
 
   newId(json) {
@@ -17,7 +17,7 @@ let submitDMAdd = (dm, newDan) => {
       method: 'POST',
       url: '/api/dance_moods',
       data: {dm: newDM}
-    }).done((response) => { console.log(response); });
+    }).done((response) => { createDanceMood(response); });
   };
 
   let createDanceMood = (response) => {
