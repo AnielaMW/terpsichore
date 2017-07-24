@@ -16,7 +16,7 @@ let submitDMAdd = (dm, newDan) => {
     $.ajax({
       method: 'POST',
       url: '/api/dance_moods',
-      data: {dance_moods: newDM}
+      data: {dance_mood: newDM}
     }).done((response) => { createDanceMood(response); });
   };
 

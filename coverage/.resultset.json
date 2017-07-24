@@ -1008,6 +1008,12 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0
       ],
       "/Users/Aniela/challenges/Capstone/terpsichore/app/controllers/api/dances_controller.rb": [
@@ -1107,6 +1113,6 @@
         0
       ]
     },
-    "timestamp": 1500916670
+    "timestamp": 1500924568
   }
 }
