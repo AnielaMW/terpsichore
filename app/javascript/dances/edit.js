@@ -7,6 +7,25 @@ let dividUpdateDirections = (dds, newDan) => {
   });
 };
 
+let sortDanMoods = (odms, ndms, newDan) => {
+  let odms_ids = odms.map(function(m){return m[0];});
+  let removeDMJoins = [];
+  let addDanMoods = [];
+
+  ndms.forEach((ndm) => {
+    if (!odms_ids.includes(ndm))
+    {addDanMoods.push(ndm);}
+  });
+
+  odms.forEach((odm) => {
+    if (!ndms.includes(odm[0]))
+    {removeDMJoins.push(odm);}
+  });
+
+  dividNewDanMoods(addDanMoods, newDan);
+  dividOldDanMoods(removeDMJoins, newDan);
+};
+
 let submitDDDEditClick = (event) => {
   event.preventDefault();
 
