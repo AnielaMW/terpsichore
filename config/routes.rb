@@ -25,6 +25,6 @@ Rails.application.routes.draw do
     resources :dance_comments, only: [:create]
     resources :dances, only: [:create, :update]
     resources :dance_directions, only: [:create, :update, :destroy]
-    resources :dance_moods, only: [:create]
+    resources :dance_moods, only: [:create, :destroy]
   end
 end
