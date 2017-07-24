@@ -10,10 +10,16 @@ class Api::DanceMoodsController < ApplicationController
     render json: @dance_mood
   end
 
+  def destroy
+    @dance_mood = DanceMood.find(dance_mood_params[:id])
+
+    @dance_mood.destroy
+  end
+
   private
 
   def dance_mood_params
-    params.require(:dm).permit(
+    params.require(:dance_mood).permit(
       :id,
       :dance_id,
       :mood_id
