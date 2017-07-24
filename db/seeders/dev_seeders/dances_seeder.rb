@@ -48,9 +48,11 @@ class DanceDevSeeder
       dance.formation = formation
       dance.key = key
       dance.meter = meter
-      # dance.mood = mood
       dance.tempo = tempo
       dance.user_id = user_id
+
+      # How do I seed the dance_moods table for each mood listed...?
+      # ????? = DanceMood.find_or_initialize_by(dance_id: ??? and mood_id: ???)
 
       dance.save
     end

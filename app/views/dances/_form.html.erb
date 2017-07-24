@@ -48,13 +48,17 @@
       </div>
 
       <!-- Eventually want to be able to select one from a list of radio buttons rather than drop down. -->
-      <div class="d-info-field left">
+      <div class="d-info-field">
         <%= f.label :dance_level_id, "Level" %>
         <%= f.collection_select :dance_level_id, @level_collection, :id, :name %>
         <%= link_to image_tag("icons/svg/question-mark.svg", alt:"Help", title:"Help", class:"help-icon"), dance_levels_path, target: '_blank' %>
       </div>
 
       <!-- Eventually need to be able to select multiple MOODS from a list of radio buttons rather than drop down -->
+      <div id="moods-ids">
+        <%= f.label :mood_ids, "Mood" %>
+        <%= f.collection_check_boxes(:mood_ids, @mood_collection, :id, :name) %>
+      </div>
 
       <table>
         <tr>

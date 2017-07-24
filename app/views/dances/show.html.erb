@@ -48,14 +48,10 @@
     </div>
   <% end %>
 
-  <% if @dance.moods && @dance.moods != "" %>
+  <% if @dance.moods && @dance.moods != "" && @dance.moods != [] %>
     <div class="d-info-field right">
       <h6>Moods: </h6>
-        <ul>
-          <% @dance.moods.each do |mood| %>
-            <li><%= link_to mood.name, mood_path(mood) %></li>
-          <% end %>
-        </ul>
+      <p> <%= @dance.moods.map{|m| m.name}.join(', ') %> </p>
     </div>
   <% end %>
 
