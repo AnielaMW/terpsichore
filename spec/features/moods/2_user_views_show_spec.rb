@@ -20,18 +20,10 @@ feature 'view moods#show', %{
     expect(page).to have_content(dm.mood.name)
   end
 
-  scenario 'sucessfully view a mood#show from moods#index_path or
-  dance_path' do
+  scenario 'sucessfully view a mood#show from moods#index_path' do
     visit moods_path
     click_on dm.mood.name
 
     expect(page).to have_current_path(mood_path(dm.mood.id))
-
-    visit dance_path(dm.dance.id)
-    click_on dm.mood.name
-
-    expect(page).to have_current_path(mood_path(dm.mood.id))
-
-    # AS A TOOLTIP OVER EACH FORMATIONS NAME IN THE DROP DOWN
   end
 end
