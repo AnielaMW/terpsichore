@@ -10,9 +10,17 @@ let dividUpdateDirections = (dds, newDan) => {
 let submitDDDEditClick = (event) => {
   event.preventDefault();
 
+  let oldDanMoods = $('#dance-mood-ids>li').map(function(_, dm) {
+    return [$(dm).text().split(', ')];
+  }).get();
+  let newDanMoods = $('#moods-ids>input:checked').map(function(_, dm) {
+    return $(dm).val();
+  }).get();
   let dirListUpdate = $('tr.dd-editable');
   let dirListAdd = $('tr.dd-new');
   let newDan = new NewDance();
+
+  sortDanMoods(oldDanMoods, newDanMoods, newDan);
 
   let updateDance = () => {
     $.ajax({
