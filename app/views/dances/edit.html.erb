@@ -1,5 +1,13 @@
 <main id="dance-edit" class="dance-edit">
   <h1>Edit <%= @dance.title %></h1>
   <p id='dance-id' class='hidden-all'><%= @dance.id %></p>
+
+  <!-- Dance Moods IDs -->
+  <ul id='dance-mood-ids' class='hidden-all'>
+    <% @dance_moods.each do |m| %>
+      <li><%= m.mood_id %>, <%= m.id %></li>
+    <% end %>
+  </ul>
+
   <%= render 'form', dance: @dance, dance_direction: @dance_direction %>
 </main>
