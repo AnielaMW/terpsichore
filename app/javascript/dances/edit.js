@@ -1,9 +1,16 @@
-import { NewDance, dividNewDirections } from '../dances/new';
+import { NewDance, dividNewDirections, dividNewDanMoods } from '../dances/new';
 import { submitDDUpdate } from '../dance_directions/edit';
+import { deleteDM } from '../moods/delete';
 
 let dividUpdateDirections = (dds, newDan) => {
   dds.each((dd) => {
     newDan.directions.push(submitDDUpdate(dd, newDan));
+  });
+};
+
+let dividOldDanMoods = (odmjs, newDan) => {
+  odmjs.forEach((dmj) => {
+    deleteDM(dmj, newDan);
   });
 };
 
