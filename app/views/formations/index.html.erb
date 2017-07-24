@@ -1,6 +1,6 @@
 <main class="formation-index">
   <header>
-    <ul class="user-bar">
+    <ul class="admin-bar">
       <li><%= link_to image_tag("icons/svg/create.svg", alt:"Create Formation", title:"Create Formation", class:"user-icon"), new_formation_path, id:"create-formation" %></li>
     </ul>
     <h1>Formations</h1>
@@ -10,7 +10,15 @@
     <% @formations.each do |forma| %>
       <li>
         <article class="formation-box">
-          <h3><%= link_to forma.name, formation_path(forma) %> <bdi>- <%= forma.description %></bdi></h3>
+          <h3><%= link_to forma.name, formation_path(forma) %> <bdi>- <%= forma.description %></bdi>
+            <% if @admin_user %>
+              <ul class="admin-bar">
+                <li><%= link_to image_tag("icons/svg/trashcan.svg", alt:"Delete", title:"Delete", class:"icon"), forma, method: :delete, data: { confirm: 'Are you sure?' }, id:"delete-formation" %></li>
+                <li><%= link_to image_tag("icons/svg/pencil.svg", alt:"Edit", title:"Edit",
+                class:"icon"), edit_formation_path(forma), id:"edit-formation" %></li>
+              </ul>
+            <% end %>
+          </h3>
         </article>
       </li>
     <% end %>

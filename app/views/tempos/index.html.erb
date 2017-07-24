@@ -1,7 +1,7 @@
 <main class="tempo-index">
   <header>
     <% if @admin_user %>
-      <ul class="user-bar">
+      <ul class="admin-bar">
         <li><%= link_to image_tag("icons/svg/create.svg", alt:"Create Tempo", title:"Create Tempo", class:"user-icon"), new_tempo_path, id:"create-tempo" %></li>
       </ul>
     <% end %>
@@ -13,7 +13,15 @@
     <% @tempos.each do |tempo| %>
       <li>
         <article class="tempo-box">
-          <h3><%= link_to tempo.name, tempo_path(tempo) %> <bdi>- <%= tempo.description %></bdi></h3>
+          <h3><%= link_to tempo.name, tempo_path(tempo) %> <bdi>- <%= tempo.description %></bdi>
+            <% if @admin_user %>
+              <ul class="admin-bar">
+                <li><%= link_to image_tag("icons/svg/trashcan.svg", alt:"Delete", title:"Delete", class:"icon"), tempo, method: :delete, data: { confirm: 'Are you sure?' }, id:"delete-tempo" %></li>
+                <li><%= link_to image_tag("icons/svg/pencil.svg", alt:"Edit", title:"Edit",
+                class:"icon"), edit_tempo_path(tempo), id:"edit-tempo" %></li>
+              </ul>
+            <% end %>
+          </h3>
         </article>
       </li>
     <% end %>

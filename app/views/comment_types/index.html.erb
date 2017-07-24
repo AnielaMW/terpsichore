@@ -1,7 +1,7 @@
 <main class="comment-type-index">
   <header>
     <% if @admin_user %>
-      <ul class="user-bar">
+      <ul class="admin-bar">
         <li><%= link_to image_tag("icons/svg/create.svg", alt:"Create Comment Type", title:"Create Comment Type", class:"user-icon"), new_comment_type_path, id:"create-comment-type" %></li>
       </ul>
     <% end %>
@@ -13,7 +13,14 @@
     <% @comment_types.each do |ct| %>
       <li>
         <article class="comment-type-box">
-          <h3><%= link_to ct.name, comment_type_path(ct) %> <bdi>- <%= ct.description %></bdi></h3>
+          <h3><%= link_to ct.name, comment_type_path(ct) %> <bdi>- <%= ct.description %></bdi>
+          <% if @admin_user %>
+            <ul class="admin-bar">
+              <li><%= link_to image_tag("icons/svg/trashcan.svg", alt:"Delete", title:"Delete", class:"icon"), ct, method: :delete, data: { confirm: 'Are you sure?' }, id:"delete-comment-type" %></li>
+              <li><%= link_to image_tag("icons/svg/pencil.svg", alt:"Edit", title:"Edit", class:"icon"), edit_comment_type_path(ct), id:"edit-comment-type" %></li>
+            </ul>
+          <% end %>
+          </h3>
         </article>
       </li>
     <% end %>

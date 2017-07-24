@@ -1,7 +1,7 @@
 <main class="dance_level-index">
   <header>
     <% if @admin_user %>
-      <ul class="user-bar">
+      <ul class="admin-bar">
         <li><%= link_to image_tag("icons/svg/create.svg", alt:"Create Dance Level", title:"Create Dance Level", class:"user-icon"), new_dance_level_path, id:"create-dance-level" %></li>
       </ul>
     <% end %>
@@ -10,10 +10,17 @@
   </header>
 
   <ul class="info-list">
-    <% @dance_levels.each do |dance_level| %>
+    <% @dance_levels.each do |dl| %>
       <li>
         <article class="dance_level-box">
-          <h3><%= link_to dance_level.name, dance_level_path(dance_level) %> <bdi>- <%= dance_level.description %></bdi></h3>
+          <h3><%= link_to dl.name, dance_level_path(dl) %> <bdi>- <%= dl.description %></bdi>
+            <% if @admin_user %>
+              <ul class="admin-bar">
+                <li><%=link_to image_tag("icons/svg/trashcan.svg", alt:"Delete", title:"Delete", class:"icon"), dl, method: :delete, data: { confirm: 'Are you sure?' }, id:"delete-dance-level" %></li>
+                <li><%= link_to image_tag("icons/svg/pencil.svg", alt:"Edit", title:"Edit", class:"icon"), edit_dance_level_path(dl), id:"edit-dance-level" %></li>
+              </ul>
+            <% end %>
+          </h3>
         </article>
       </li>
     <% end %>

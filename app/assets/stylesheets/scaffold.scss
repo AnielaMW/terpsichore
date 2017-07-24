@@ -161,6 +161,17 @@ header aside {
   width: 100%;
 }
 
+// Sitewide admin bars
+.admin-bar {
+  display: inline;
+}
+
+.admin-bar li {
+  display: inline;
+  float: right;
+  font-size: 12px;
+}
+
 // Sitewide general
 
 fieldset {
