@@ -1,4 +1,4 @@
-class NewMood {
+class NewDanceMood {
   constructor(dm, danId) {
     this.dance_id = danId;
     this.mood_id = dm;
@@ -10,13 +10,13 @@ class NewMood {
 }
 
 let submitDMAdd = (dm, newDan) => {
-  let newDM = new NewMood(dm, newDan.id);
+  let newDM = new NewDanceMood(dm, newDan.id);
 
   let saveDanceMood = () => {
     $.ajax({
       method: 'POST',
       url: '/api/dance_moods',
-      data: {dm: newDM}
+      data: {dance_moods: newDM}
     }).done((response) => { createDanceMood(response); });
   };
 
@@ -28,4 +28,4 @@ let submitDMAdd = (dm, newDan) => {
   return newDM;
 };
 
-export { submitDMAdd, newDM, NewMood };
+export { submitDMAdd, newDM, NewDanceMood };
