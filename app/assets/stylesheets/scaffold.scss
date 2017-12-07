@@ -83,6 +83,13 @@ header>a {
   float: right;
 }
 
+.alert {
+  color: black;
+  font-style: italic;
+  font-weight: bold;
+  margin: 15px 0 20px 0;
+}
+
 // Sitewide Header
 .top-bar {
   background-color: $color-teal;
