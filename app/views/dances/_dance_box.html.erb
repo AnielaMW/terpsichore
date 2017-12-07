@@ -11,6 +11,19 @@
     <!-- the name of the song -->
   </section>
 
+  <section class='dance-info-preview'>
+      <table class='dance-info'>
+        <tr>
+          <% if dance.dance_directions %>
+            <%= render 'dance_directions/dance_direction_table', dance: dance, dds: dance.dance_directions.order(:sequence).limit(3) %>
+          <% end %>
+          <tr>
+            <%= link_to image_tag("icons/svg/029-mark.svg", alt:"More", title:"More", class:"icon"), dance_path(dance) %>
+          </tr>
+        </tr>
+      </table>
+  </section>
+
   <section>
     <% if dance.choreographer && dance.choreographer != "" %>
       <p><bdi>Choreographed by:</bdi> <%= dance.choreographer %></p>
