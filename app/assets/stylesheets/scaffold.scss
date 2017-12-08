@@ -278,7 +278,7 @@ fieldset {
 
       li{
         border: none;
-        display: inline-block;
+        //display: inline-block;
         padding: 3px 20px;
       }
 
@@ -328,8 +328,18 @@ fieldset {
   }
 
   // Sitewide top nav bar
-  .eliza-brun {
-    display: none;
+  .nav-bar {
+    .eliza-brun {
+      display: none;
+    }
+
+    ul {
+      margin: auto;
+
+      li {
+        display: inline-block;
+      }
+    }
   }
 
   // Sitewide Footer
