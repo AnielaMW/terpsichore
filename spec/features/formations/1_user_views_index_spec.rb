@@ -23,14 +23,5 @@ feature 'view formations#index', %{
     expect(formations[0]).to have_content(form1.name)
     expect(formations[1]).to have_content(form3.name)
     expect(formations[2]).to have_content(form2.name)
-
-    visit root_path
-    click_on "Formations"
-
-    formations = page.all(".info-list article")
-
-    expect(formations[0]).to have_content(form1.name)
-    expect(formations[1]).to have_content(form3.name)
-    expect(formations[2]).to have_content(form2.name)
   end
 end

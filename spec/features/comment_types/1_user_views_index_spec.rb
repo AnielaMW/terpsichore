@@ -8,8 +8,6 @@ feature 'view comment_types#index', %{
   # Acceptance
   # When a guest visits the comment_types#index_path,
   # they should expect to see a list of all comment_types
-  # When a guest clicks the view button on the comment form,
-  # they should expect to see a list of all comment_types
   # The list should be sorted alphabetically by Title
   # The list should include the Name
 
@@ -26,14 +24,8 @@ feature 'view comment_types#index', %{
     expect(comment_types[0]).to have_content(type2.name)
     expect(comment_types[1]).to have_content(type3.name)
     expect(comment_types[2]).to have_content(type1.name)
-
-    visit root_path
-    click_on "Comment Types"
-
-    comment_types = page.all(".info-list article")
-
-    expect(comment_types[0]).to have_content(type2.name)
-    expect(comment_types[1]).to have_content(type3.name)
-    expect(comment_types[2]).to have_content(type1.name)
   end
+  
+  # When a guest clicks the view button on the comment form,
+  # they should expect to see a list of all comment_types
 end
