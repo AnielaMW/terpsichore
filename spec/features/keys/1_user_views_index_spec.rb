@@ -23,14 +23,5 @@ feature 'view keys#index', %{
     expect(keys[0]).to have_content(level2.name)
     expect(keys[1]).to have_content(level1.name)
     expect(keys[2]).to have_content(level3.name)
-
-    visit root_path
-    click_on "Keys"
-
-    keys = page.all(".info-list article")
-
-    expect(keys[0]).to have_content(level2.name)
-    expect(keys[1]).to have_content(level1.name)
-    expect(keys[2]).to have_content(level3.name)
   end
 end

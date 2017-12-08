@@ -23,14 +23,5 @@ feature 'view tempos#index', %{
     expect(tempos[0]).to have_content(tempo1.name)
     expect(tempos[1]).to have_content(tempo2.name)
     expect(tempos[2]).to have_content(tempo3.name)
-
-    visit root_path
-    click_on "Tempos"
-
-    tempos = page.all(".info-list article")
-
-    expect(tempos[0]).to have_content(tempo1.name)
-    expect(tempos[1]).to have_content(tempo2.name)
-    expect(tempos[2]).to have_content(tempo3.name)
   end
 end

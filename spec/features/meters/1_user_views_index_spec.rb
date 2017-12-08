@@ -23,14 +23,5 @@ feature 'view meters#index', %{
     expect(meters[0]).to have_content(meter2.name)
     expect(meters[1]).to have_content(meter1.name)
     expect(meters[2]).to have_content(meter3.name)
-
-    visit root_path
-    click_on "Meters"
-
-    meters = page.all(".info-list article")
-
-    expect(meters[0]).to have_content(meter2.name)
-    expect(meters[1]).to have_content(meter1.name)
-    expect(meters[2]).to have_content(meter3.name)
   end
 end

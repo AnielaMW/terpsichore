@@ -28,6 +28,10 @@ h2 bdi {
     }
   }
 
+  .dance-info-preview {
+    display: none;
+  }
+
   footer {
     ul {
       bottom: 0;
@@ -41,10 +45,18 @@ h2 bdi {
       padding: 20px 8px;
     }
   }
+
+}
+
+.dance-box:hover {
+  .dance-info-preview {
+    display: block;
+    margin: 5px 10px;
+  }
 }
 
 // dance#index
-.dance-index{
+.dance-index {
   >.user-bar li {
     margin-top: 0;
   }
@@ -79,6 +91,10 @@ p {
 }
 
 // dance forms
+#moods-ids>input {
+  margin: 0 5px 0 10px;
+}
+
 .no-bord {
   border: 0;
   width: 100%;

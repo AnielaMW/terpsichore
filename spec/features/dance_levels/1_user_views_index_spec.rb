@@ -23,14 +23,5 @@ feature 'view dance_levels#index', %{
     expect(dance_levels[0]).to have_content(level1.name)
     expect(dance_levels[1]).to have_content(level2.name)
     expect(dance_levels[2]).to have_content(level3.name)
-
-    visit root_path
-    click_on "Levels"
-
-    dance_levels = page.all(".info-list article")
-
-    expect(dance_levels[0]).to have_content(level1.name)
-    expect(dance_levels[1]).to have_content(level2.name)
-    expect(dance_levels[2]).to have_content(level3.name)
   end
 end

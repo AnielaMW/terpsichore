@@ -23,14 +23,5 @@ feature 'view moods#index', %{
     expect(moods[0]).to have_content(mood2.name)
     expect(moods[1]).to have_content(mood3.name)
     expect(moods[2]).to have_content(mood1.name)
-
-    visit root_path
-    click_on "Moods"
-
-    moods = page.all(".info-list article")
-
-    expect(moods[0]).to have_content(mood2.name)
-    expect(moods[1]).to have_content(mood3.name)
-    expect(moods[2]).to have_content(mood1.name)
   end
 end

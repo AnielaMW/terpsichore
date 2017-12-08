@@ -83,6 +83,13 @@ header>a {
   float: right;
 }
 
+.warning {
+  color: black;
+  font-style: italic;
+  font-weight: bold;
+  margin: 15px 0 20px 0;
+}
+
 // Sitewide Header
 .top-bar {
   background-color: $color-teal;
@@ -146,6 +153,12 @@ header aside {
       text-decoration: none;
     }
   }
+
+  h2.LI-profile-badge {
+    color: $color-teal;
+    font-size: 1em;
+    text-shadow: none;
+  }
 }
 
 // Sitewide user bars
@@ -159,6 +172,17 @@ header aside {
 
 .main-data {
   width: 100%;
+}
+
+// Sitewide admin bars
+.admin-bar {
+  display: inline;
+}
+
+.admin-bar li {
+  display: inline;
+  float: right;
+  font-size: 12px;
 }
 
 // Sitewide general
@@ -260,7 +284,7 @@ fieldset {
 
       li{
         border: none;
-        display: inline-block;
+        //display: inline-block;
         padding: 3px 20px;
       }
 
@@ -272,6 +296,10 @@ fieldset {
           text-decoration: underline;
         }
       }
+    }
+
+    .LI-profile-badge {
+      display: none;
     }
   }
 
@@ -306,8 +334,18 @@ fieldset {
   }
 
   // Sitewide top nav bar
-  .eliza-brun {
-    display: none;
+  .nav-bar {
+    .eliza-brun {
+      display: none;
+    }
+
+    ul {
+      margin: auto;
+
+      li {
+        display: inline-block;
+      }
+    }
   }
 
   // Sitewide Footer

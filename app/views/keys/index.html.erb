@@ -1,6 +1,6 @@
 <main class="key-index">
   <header>
-    <ul class="user-bar">
+    <ul class="admin-bar">
       <li><%= link_to image_tag("icons/svg/create.svg", alt:"Create Key", title:"Create Key", class:"user-icon"), new_key_path, id:"create-key" %></li>
     </ul>
     <h1>Keys</h1>
@@ -10,7 +10,15 @@
     <% @keys.each do |key| %>
       <li>
         <article class="key-box">
-          <h3><%= link_to key.name, key_path(key) %></h3>
+          <h3><%= link_to key.name, key_path(key) %>
+            <% if @admin_user %>
+              <ul class="admin-bar">
+                <li><%= link_to image_tag("icons/svg/trashcan.svg", alt:"Delete", title:"Delete", class:"icon"), key, method: :delete, data: { confirm: 'Are you sure?' }, id:"delete-key" %></li>
+                <li><%= link_to image_tag("icons/svg/pencil.svg", alt:"Edit", title:"Edit",
+                class:"icon"), edit_key_path(key), id:"edit-key" %></li>
+              </ul>
+            <% end %>
+          </h3>
         </article>
       </li>
     <% end %>
