@@ -37,6 +37,7 @@
         <%= image_tag("Elisabeth_Louise_Vigee_Le_Brun.png", alt:"Portrait of Elisabeth Louise Vigee Le Brun as Terpsichore", class:"eliza-brun") %>
 
         <ul>
+          <li><%= link_to "Create a Dance", new_dance_path %></li>
           <li><%= link_to "Members", users_path %></li>
           <li><%= link_to "Dances", dances_path %></li>
           <li><%= link_to "Comments", dance_comments_path %></li>
