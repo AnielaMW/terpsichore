@@ -1,8 +1,8 @@
 # README
 
-<!-- ![Build Status](https://codeship.com/projects/c2bedbf0-2f6a-0135-a146-12fa73eeb273/status?branch=master)
+![Build Status](https://codeship.com/projects/c2bedbf0-2f6a-0135-a146-12fa73eeb273/status?branch=master)
 ![Code Climate](https://codeclimate.com/github/AnielaMW/terpsichore.png)
-![Coverage Status](https://coveralls.io/repos/AnielaMW/terpsichore/badge.png) -->
+![Coverage Status](https://coveralls.io/repos/AnielaMW/terpsichore/badge.png)
 
 A repository and social network for dancers, callers, and musicians of English Country Dance.
 
