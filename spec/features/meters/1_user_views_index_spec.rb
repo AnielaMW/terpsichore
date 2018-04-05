@@ -11,9 +11,9 @@ feature 'view meters#index', %{
   # The list should be sorted alphabetically by Title
   # The list should include the Name
 
-  let!(:meter1) { FactoryGirl.create(:meter, name: "5/8") }
-  let!(:meter2) { FactoryGirl.create(:meter, name: "3/4") }
-  let!(:meter3) { FactoryGirl.create(:meter, name: "8/16") }
+  let!(:meter1) { FactoryBot.create(:meter, name: "5/8") }
+  let!(:meter2) { FactoryBot.create(:meter, name: "3/4") }
+  let!(:meter3) { FactoryBot.create(:meter, name: "8/16") }
 
   scenario 'sucessfully view the meters#index' do
     visit meters_path

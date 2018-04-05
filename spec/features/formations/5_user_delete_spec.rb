@@ -11,8 +11,8 @@ feature 'delete a formation', %{
   # If user is not signed-in, they cannot see the 'Delete' button
   # If user is not Admin, they cannot see the 'Delete' button
 
-  let!(:admin) { FactoryGirl.create(:admin) }
-  let!(:formation) { FactoryGirl.create(:formation) }
+  let!(:admin) { FactoryBot.create(:admin) }
+  let!(:formation) { FactoryBot.create(:formation) }
 
   scenario 'sucessfully delete a formation when admin user' do
     sign_in admin

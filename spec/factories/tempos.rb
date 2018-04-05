@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :tempo do
     sequence(:name) { |n| "Tempo #{n}" }
     description "Tempo Description."

@@ -11,8 +11,8 @@ feature 'delete a meter', %{
   # If user is not signed-in, they cannot see the 'Delete' button
   # If user is not Admin, they cannot see the 'Delete' button
 
-  let!(:admin) { FactoryGirl.create(:admin) }
-  let!(:meter) { FactoryGirl.create(:meter) }
+  let!(:admin) { FactoryBot.create(:admin) }
+  let!(:meter) { FactoryBot.create(:meter) }
 
   scenario 'sucessfully delete a meter when admin user' do
     sign_in admin

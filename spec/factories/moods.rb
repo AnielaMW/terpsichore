@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :mood do
     sequence(:name) { |n| "Mood #{n}" }
   end

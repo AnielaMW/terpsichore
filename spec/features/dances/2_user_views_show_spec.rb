@@ -16,8 +16,8 @@ feature 'view dances#show', %{
   #   Title, Formation, Meter
   # Details may include Choreographer, Year, Publication
 
-  let!(:dance1) { FactoryGirl.create(:dance) }
-  let!(:dance2) { FactoryGirl.create(:choreographed) }
+  let!(:dance1) { FactoryBot.create(:dance) }
+  let!(:dance2) { FactoryBot.create(:choreographed) }
 
   scenario 'sucessfully view a dance#show when entered directly' do
     visit dance_path(dance1.id)

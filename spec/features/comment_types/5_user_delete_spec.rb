@@ -11,9 +11,9 @@ feature 'delete a comment_type', %{
   # If user is not signed-in, they cannot see the 'Delete' button
   # If user is not Admin, they cannot see the 'Delete' button
 
-  let!(:admin) { FactoryGirl.create(:admin) }
-  let!(:comment_type) { FactoryGirl.create(:comment_type) }
-  let!(:anne) { FactoryGirl.create(:anne) }
+  let!(:admin) { FactoryBot.create(:admin) }
+  let!(:comment_type) { FactoryBot.create(:comment_type) }
+  let!(:anne) { FactoryBot.create(:anne) }
 
   scenario 'sucessfully delete a comment_type when admin user' do
     sign_in admin

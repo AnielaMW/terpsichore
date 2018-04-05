@@ -12,7 +12,7 @@ feature 'sign_in to account', %{
   # * If information is incomplete, User gets error message.
   # * If information is invalid, User gets error message.
 
-  let!(:anne) { FactoryGirl.create(:anne) }
+  let!(:anne) { FactoryBot.create(:anne) }
   william = { email: 'two_faced@bath.com', password: 'lied4money' }
 
   scenario 'sucessfully sign_in when user enters valid information' do

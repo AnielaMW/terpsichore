@@ -13,12 +13,12 @@ feature 'update a dance_comment', %{
   # If user is not signed-in, they cannot see the 'Edit' button
   # If user is not the creator, they cannot see the 'Edit' button
 
-  let!(:com1) { FactoryGirl.create(:dstyle_comment) }
-  let!(:com2) { FactoryGirl.create(:dstyle_comment, dance_id: com1.dance_id) }
-  let!(:com3) { FactoryGirl.create(:dstyle_comment) }
-  let!(:type) { FactoryGirl.create(:comment_type) }
+  let!(:com1) { FactoryBot.create(:dstyle_comment) }
+  let!(:com2) { FactoryBot.create(:dstyle_comment, dance_id: com1.dance_id) }
+  let!(:com3) { FactoryBot.create(:dstyle_comment) }
+  let!(:type) { FactoryBot.create(:comment_type) }
   changes = { comment: "My New Fav Dance" }
-  let!(:clay) { FactoryGirl.create(:anne) }
+  let!(:clay) { FactoryBot.create(:anne) }
 
   scenario 'creator sucessfully update dance_comment with valid
   information from dance_path' do

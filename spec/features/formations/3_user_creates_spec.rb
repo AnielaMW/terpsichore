@@ -10,8 +10,8 @@ feature 'create a formation', %{
   # User must povide Name and Desription
   # If user is not signed-in they cannot see the link to add new formations.
 
-  let!(:anne) { FactoryGirl.create(:anne) }
-  let!(:dance) { FactoryGirl.create(:dance) }
+  let!(:anne) { FactoryBot.create(:anne) }
+  let!(:dance) { FactoryBot.create(:dance) }
   new_formation = { name: "6 Couple", description: "3 next to 3" }
 
   scenario 'authenticated user successfully create formation

@@ -12,8 +12,8 @@ feature 'update a formation', %{
   # If user is not signed-in, they cannot see the 'Edit' button
   # If user is not admin, they cannot see the 'Edit' button
 
-  let!(:admin) { FactoryGirl.create(:admin) }
-  let!(:formation) { FactoryGirl.create(:formation) }
+  let!(:admin) { FactoryBot.create(:admin) }
+  let!(:formation) { FactoryBot.create(:formation) }
   changes = { name: "2 Couple Improper",
               description: "4 people the 1st Couple on wrong side of set." }
 
@@ -42,8 +42,7 @@ expect(page).to have_selector(:link_or_button, "edit-formation")
     fill_in 'Description', with: ""
     click_on "Update"
 
-    expect(page).to have_content("Name can't be blank,
-    Description can't be blank")
+    expect(page).to have_content("Name can't be blank, Description can't be blank")
   end
 
   scenario 'fail to see "Edit" button with non-admin user' do

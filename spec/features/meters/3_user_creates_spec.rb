@@ -10,8 +10,8 @@ feature 'create a meter', %{
   # User must povide Name and Desription
   # If user is not signed-in they cannot see the link to add new meters.
 
-  let!(:anne) { FactoryGirl.create(:anne) }
-  let!(:dance) { FactoryGirl.create(:dance) }
+  let!(:anne) { FactoryBot.create(:anne) }
+  let!(:dance) { FactoryBot.create(:dance) }
   new_meter = { name: "1/2" }
 
   scenario 'authenticated user successfully create meter

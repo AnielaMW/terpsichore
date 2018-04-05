@@ -9,7 +9,7 @@ feature 'deletes account', %{
   # ACCEPTANCE CRITERIA
   # * User can delete account
 
-  let!(:anne) { FactoryGirl.create(:anne) }
+  let!(:anne) { FactoryBot.create(:anne) }
 
   scenario 'sucessfully delete account' do
     sign_in anne

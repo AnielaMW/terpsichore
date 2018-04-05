@@ -12,8 +12,8 @@ feature 'update a mood', %{
   # If user is not signed-in, they cannot see the 'Edit' button
   # If user is not admin, they cannot see the 'Edit' button
 
-  let!(:admin) { FactoryGirl.create(:admin) }
-  let!(:mood) { FactoryGirl.create(:mood) }
+  let!(:admin) { FactoryBot.create(:admin) }
+  let!(:mood) { FactoryBot.create(:mood) }
   changes = { name: "Rowdy" }
 
   scenario 'admin user sucessfully update mood with valid information' do

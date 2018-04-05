@@ -11,9 +11,9 @@ feature 'view keys#index', %{
   # The list should be sorted alphabetically by Title
   # The list should include the Name
 
-  let!(:level1) { FactoryGirl.create(:key, name: "Db") }
-  let!(:level2) { FactoryGirl.create(:key, name: "A") }
-  let!(:level3) { FactoryGirl.create(:key, name: "G") }
+  let!(:level1) { FactoryBot.create(:key, name: "Db") }
+  let!(:level2) { FactoryBot.create(:key, name: "A") }
+  let!(:level3) { FactoryBot.create(:key, name: "G") }
 
   scenario 'sucessfully view the keys#index' do
     visit keys_path

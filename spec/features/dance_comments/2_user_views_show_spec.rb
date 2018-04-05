@@ -13,7 +13,7 @@ feature 'view dance_comments#show', %{
   # Details must include Creator(User),
   #   Comment, Dance.name, Comment_Type
 
-  let!(:com1) { FactoryGirl.create(:dance_comment) }
+  let!(:com1) { FactoryBot.create(:dance_comment) }
 
   scenario 'sucessfully view a dance_comment#show when entered directly' do
     visit dance_comment_path(com1.id)

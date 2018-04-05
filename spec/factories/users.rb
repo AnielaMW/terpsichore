@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :user, aliases: [:anne] do
     first_name "Anne"
     last_name "Elliot"

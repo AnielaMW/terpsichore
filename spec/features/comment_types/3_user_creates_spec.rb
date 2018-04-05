@@ -11,9 +11,9 @@ feature 'create a comment_type', %{
   # If user is not signed-in and admin they cannot see the link to
   # add new comment_types.
 
-  let!(:admin) { FactoryGirl.create(:admin) }
+  let!(:admin) { FactoryBot.create(:admin) }
   new_type = { name: "Caller's Tip", description: "Tips for Callers" }
-  let!(:anne) { FactoryGirl.create(:anne) }
+  let!(:anne) { FactoryBot.create(:anne) }
 
   scenario 'admin user successfully create comment_type
     with valid information' do

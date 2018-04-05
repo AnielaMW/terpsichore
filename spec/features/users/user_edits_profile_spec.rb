@@ -13,7 +13,7 @@ feature 'edits account', %{
   # * If all information is complete, User is updated.
   # * If information is incomplete, User gets error message.
 
-  let!(:anne) { FactoryGirl.create(:anne) }
+  let!(:anne) { FactoryBot.create(:anne) }
 
   scenario 'sucessfully update account when user enters valid information' do
     mrs_anne = { first_name: 'Mrs. Anne',

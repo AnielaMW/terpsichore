@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :dance_direction, aliases: [:dd] do
     dance
     sequence(:sequence) { |n| n.to_s }

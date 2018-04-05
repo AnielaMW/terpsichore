@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :dance_comment do
     sequence(:comment) { |n| "Message #{n}" }
     dance

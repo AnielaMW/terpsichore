@@ -12,8 +12,8 @@ feature 'update a dance_level', %{
   # If user is not signed-in, they cannot see the 'Edit' button
   # If user is not admin, they cannot see the 'Edit' button
 
-  let!(:admin) { FactoryGirl.create(:admin) }
-  let!(:dance_level) { FactoryGirl.create(:dance_level) }
+  let!(:admin) { FactoryBot.create(:admin) }
+  let!(:dance_level) { FactoryBot.create(:dance_level) }
   changes = { name: "2 Couple Improper",
               description: "4 people the 1st Couple on wrong side of set." }
 
@@ -41,8 +41,7 @@ feature 'update a dance_level', %{
     fill_in 'Description', with: ""
     click_on "Update"
 
-    expect(page).to have_content("Name can't be blank,
-    Description can't be blank")
+    expect(page).to have_content("Name can't be blank, Description can't be blank")
   end
 
   scenario 'fail to see "Edit" button with non-admin user' do

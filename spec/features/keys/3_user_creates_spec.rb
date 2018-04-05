@@ -10,8 +10,8 @@ feature 'create a key', %{
   # User must povide Name and Desription
   # If user is not signed-in they cannot see the link to add new keys.
 
-  let!(:anne) { FactoryGirl.create(:anne) }
-  let!(:dance) { FactoryGirl.create(:dance) }
+  let!(:anne) { FactoryBot.create(:anne) }
+  let!(:dance) { FactoryBot.create(:dance) }
   new_key = { name: "F#" }
 
   scenario 'authenticated user successfully create key

@@ -12,9 +12,9 @@ feature 'view dances#index', %{
   # The list should include the Dance Title, Creator, Choreographer(if any),
   # year(if any)
 
-  let!(:dance1) { FactoryGirl.create(:dance, title: "Zelda's Waltz") }
-  let!(:dance2) { FactoryGirl.create(:dance, title: "Link's Jig") }
-  let!(:dance3) { FactoryGirl.create(:choreographed, title: "Mario's Maggot") }
+  let!(:dance1) { FactoryBot.create(:dance, title: "Zelda's Waltz") }
+  let!(:dance2) { FactoryBot.create(:dance, title: "Link's Jig") }
+  let!(:dance3) { FactoryBot.create(:choreographed, title: "Mario's Maggot") }
 
   scenario 'sucessfully view the dances#index' do
     visit dances_path

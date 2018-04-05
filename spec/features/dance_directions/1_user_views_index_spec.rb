@@ -14,11 +14,11 @@ feature 'view dance directions', %{
   # The list should include the sequence and direction
   # The list may include the mark, measure, and position if provided
 
-  let!(:dance) { FactoryGirl.create(:dance) }
-  let!(:dir1) { FactoryGirl.create(:dod, dance_id: dance.id) }
-  let!(:dir2) { FactoryGirl.create(:dance_direction, dance_id: dance.id) }
-  let!(:dir3) { FactoryGirl.create(:dance_direction, dance_id: dance.id) }
-  let!(:dir4) { FactoryGirl.create(:dance_direction) }
+  let!(:dance) { FactoryBot.create(:dance) }
+  let!(:dir1) { FactoryBot.create(:dod, dance_id: dance.id) }
+  let!(:dir2) { FactoryBot.create(:dance_direction, dance_id: dance.id) }
+  let!(:dir3) { FactoryBot.create(:dance_direction, dance_id: dance.id) }
+  let!(:dir4) { FactoryBot.create(:dance_direction) }
 
   scenario 'sucessfully view the dance_directions for a given dance' do
     visit dance_path(dance)

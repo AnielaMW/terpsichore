@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :dance do
     user
     sequence(:title) { |n| "Dance Title #{n}" }

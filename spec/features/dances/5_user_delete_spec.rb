@@ -11,9 +11,9 @@ feature 'delete a dance', %{
   # If user is not signed-in, they cannot see the 'Delete' button
   # If user is not the creator, they cannot see the 'Delete' button
 
-  let!(:anne) { FactoryGirl.create(:anne) }
-  let!(:dance1) { FactoryGirl.create(:dance, user_id: anne.id) }
-  let!(:clay) { FactoryGirl.create(:anne) }
+  let!(:anne) { FactoryBot.create(:anne) }
+  let!(:dance1) { FactoryBot.create(:dance, user_id: anne.id) }
+  let!(:clay) { FactoryBot.create(:anne) }
 
   scenario 'sucessfully delete a dance when authenticated user' do
     sign_in anne

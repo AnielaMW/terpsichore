@@ -12,7 +12,7 @@ feature 'view comment_types#show', %{
   # they should expect to see all details of a comment_type
   # Details must include Name and Description
 
-  let!(:comment_type) { FactoryGirl.create(:comment_type) }
+  let!(:comment_type) { FactoryBot.create(:comment_type) }
 
   scenario 'sucessfully view a comment_type#show when entered directly' do
     visit comment_type_path(comment_type.id)

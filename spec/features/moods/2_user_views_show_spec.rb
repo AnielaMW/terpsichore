@@ -12,7 +12,7 @@ feature 'view moods#show', %{
   # they should expect to see all details of a mood
   # Details must include Name and Description
 
-  let!(:dm) { FactoryGirl.create(:dance_mood) }
+  let!(:dm) { FactoryBot.create(:dance_mood) }
 
   scenario 'sucessfully view a mood#show when entered directly' do
     visit mood_path(dm.mood.id)

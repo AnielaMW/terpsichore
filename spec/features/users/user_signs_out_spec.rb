@@ -9,7 +9,7 @@ feature 'sign_out of account', %{
   # ACCEPTANCE CRITERIA
   # * User signs out
 
-  let!(:anne) { FactoryGirl.create(:anne) }
+  let!(:anne) { FactoryBot.create(:anne) }
 
   scenario 'sucessfully sign_out when user signs_out' do
     sign_in anne

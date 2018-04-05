@@ -12,8 +12,8 @@ feature 'update a tempo', %{
   # If user is not signed-in, they cannot see the 'Edit' button
   # If user is not admin, they cannot see the 'Edit' button
 
-  let!(:admin) { FactoryGirl.create(:admin) }
-  let!(:tempo) { FactoryGirl.create(:tempo) }
+  let!(:admin) { FactoryBot.create(:admin) }
+  let!(:tempo) { FactoryBot.create(:tempo) }
   changes = { name: "Glacial",
               description: "Slower than a mountain of ice." }
 

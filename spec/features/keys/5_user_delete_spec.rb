@@ -11,8 +11,8 @@ feature 'delete a key', %{
   # If user is not signed-in, they cannot see the 'Delete' button
   # If user is not Admin, they cannot see the 'Delete' button
 
-  let!(:admin) { FactoryGirl.create(:admin) }
-  let!(:key) { FactoryGirl.create(:key) }
+  let!(:admin) { FactoryBot.create(:admin) }
+  let!(:key) { FactoryBot.create(:key) }
 
   scenario 'sucessfully delete a key when admin user' do
     sign_in admin

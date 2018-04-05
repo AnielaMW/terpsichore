@@ -12,8 +12,8 @@ feature 'view dance_levels#show', %{
   # they should expect to see all details of a dance_level
   # Details must include Name and Description
 
-  let!(:dance_level) { FactoryGirl.create(:dance_level) }
-  let!(:dance) { FactoryGirl.create(:dance, dance_level_id: dance_level.id) }
+  let!(:dance_level) { FactoryBot.create(:dance_level) }
+  let!(:dance) { FactoryBot.create(:dance, dance_level_id: dance_level.id) }
 
   scenario 'sucessfully view a dance_level#show when entered directly' do
     visit dance_level_path(dance_level.id)

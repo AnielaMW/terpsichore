@@ -12,10 +12,10 @@ feature 'update a comment_type', %{
   # If user is not signed-in, they cannot see the 'Edit' button
   # If user is not admin, they cannot see the 'Edit' button
 
-  let!(:admin) { FactoryGirl.create(:admin) }
-  let!(:comment_type) { FactoryGirl.create(:comment_type) }
+  let!(:admin) { FactoryBot.create(:admin) }
+  let!(:comment_type) { FactoryBot.create(:comment_type) }
   changes = { name: "Caller's Tip", description: "Tips for Callers" }
-  let!(:anne) { FactoryGirl.create(:anne) }
+  let!(:anne) { FactoryBot.create(:anne) }
 
   scenario 'admin user sucessfully update comment_type with
   valid information' do
@@ -45,8 +45,7 @@ feature 'update a comment_type', %{
     fill_in 'Description', with: ""
     click_on "Update"
 
-    expect(page).to have_content("Name can't be blank,
-    Description can't be blank")
+    expect(page).to have_content("Name can't be blank, Description can't be blank")
   end
 
   scenario 'fail to see "Edit" button with non-admin user' do

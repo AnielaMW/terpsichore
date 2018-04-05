@@ -12,8 +12,8 @@ feature 'view tempos#show', %{
   # they should expect to see all details of a tempo
   # Details must include Name and Description
 
-  let!(:tempo) { FactoryGirl.create(:tempo) }
-  let!(:dance) { FactoryGirl.create(:dance, tempo_id: tempo.id) }
+  let!(:tempo) { FactoryBot.create(:tempo) }
+  let!(:dance) { FactoryBot.create(:dance, tempo_id: tempo.id) }
 
   scenario 'sucessfully view a tempo#show when entered directly' do
     visit tempo_path(tempo.id)

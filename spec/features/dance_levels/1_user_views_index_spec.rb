@@ -11,9 +11,9 @@ feature 'view dance_levels#index', %{
   # The list should be sorted alphabetically by Title
   # The list should include the Name
 
-  let!(:level1) { FactoryGirl.create(:dance_level, name: "Medium") }
-  let!(:level2) { FactoryGirl.create(:dance_level, name: "Easy") }
-  let!(:level3) { FactoryGirl.create(:dance_level, name: "Difficult") }
+  let!(:level1) { FactoryBot.create(:dance_level, name: "Medium") }
+  let!(:level2) { FactoryBot.create(:dance_level, name: "Easy") }
+  let!(:level3) { FactoryBot.create(:dance_level, name: "Difficult") }
 
   scenario 'sucessfully view the dance_levels#index' do
     visit dance_levels_path

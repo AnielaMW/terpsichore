@@ -12,8 +12,8 @@ feature 'view meters#show', %{
   # they should expect to see all details of a meter
   # Details must include Name and Description
 
-  let!(:meter) { FactoryGirl.create(:meter) }
-  let!(:dance) { FactoryGirl.create(:dance, meter_id: meter.id) }
+  let!(:meter) { FactoryBot.create(:meter) }
+  let!(:dance) { FactoryBot.create(:dance, meter_id: meter.id) }
 
   scenario 'sucessfully view a meter#show when entered directly' do
     visit meter_path(meter.id)

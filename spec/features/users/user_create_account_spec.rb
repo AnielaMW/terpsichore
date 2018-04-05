@@ -12,7 +12,7 @@ feature 'create account', %{
   # * If all information is complete, User is registered and authenticated.
   # * If information is incomplete, User gets error message.
 
-  # let!(:anne) { FactoryGirl.create(:anne) }
+  # let!(:anne) { FactoryBot.create(:anne) }
   william = { first_name: 'William',
               last_name: 'Elliot',
               user_name: 'SirWilliam',
@@ -40,8 +40,7 @@ feature 'create account', %{
     click_on 'Sign Up'
     click_on 'Create Account'
 
-    expect(page).to have_content('
-    errors prohibited this user from being saved:')
+    expect(page).to have_content('errors prohibited this user from being saved:')
     expect(page).to have_content('Sign Up')
   end
 

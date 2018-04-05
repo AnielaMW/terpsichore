@@ -12,8 +12,8 @@ feature 'view formations#show', %{
   # they should expect to see all details of a formation
   # Details must include Name and Description
 
-  let!(:formation) { FactoryGirl.create(:formation) }
-  let!(:dance) { FactoryGirl.create(:dance, formation_id: formation.id) }
+  let!(:formation) { FactoryBot.create(:formation) }
+  let!(:dance) { FactoryBot.create(:dance, formation_id: formation.id) }
 
   scenario 'sucessfully view a formation#show when entered directly' do
     visit formation_path(formation.id)

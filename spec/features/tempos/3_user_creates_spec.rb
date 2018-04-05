@@ -10,8 +10,8 @@ feature 'create a tempo', %{
   # User must povide Name and Desription
   # If user is not signed-in they cannot see the link to add new tempos.
 
-  let!(:anne) { FactoryGirl.create(:admin) }
-  let!(:dance) { FactoryGirl.create(:dance) }
+  let!(:anne) { FactoryBot.create(:admin) }
+  let!(:dance) { FactoryBot.create(:dance) }
   new_tempo = { name: "Flirty", description: "Romantic, but fun." }
 
   scenario 'admin user successfully create tempo

@@ -12,8 +12,8 @@ feature 'update a meter', %{
   # If user is not signed-in, they cannot see the 'Edit' button
   # If user is not admin, they cannot see the 'Edit' button
 
-  let!(:admin) { FactoryGirl.create(:admin) }
-  let!(:meter) { FactoryGirl.create(:meter) }
+  let!(:admin) { FactoryBot.create(:admin) }
+  let!(:meter) { FactoryBot.create(:meter) }
   changes = { name: "3/7" }
 
   scenario 'admin user sucessfully update meter with valid information' do

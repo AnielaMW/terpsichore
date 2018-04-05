@@ -12,8 +12,8 @@ feature 'update a key', %{
   # If user is not signed-in, they cannot see the 'Edit' button
   # If user is not admin, they cannot see the 'Edit' button
 
-  let!(:admin) { FactoryGirl.create(:admin) }
-  let!(:key) { FactoryGirl.create(:key) }
+  let!(:admin) { FactoryBot.create(:admin) }
+  let!(:key) { FactoryBot.create(:key) }
   changes = { name: "Bd" }
 
   scenario 'admin user sucessfully update key with valid information' do

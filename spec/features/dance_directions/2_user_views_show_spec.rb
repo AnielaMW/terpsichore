@@ -13,8 +13,8 @@ feature 'view dance_directions#show', %{
   # Details must include Dance.title, sequence, direction
   # Details may include mark, measure, position, comments
 
-  let!(:dir1) { FactoryGirl.create(:dd) }
-  let!(:dir2) { FactoryGirl.create(:dod) }
+  let!(:dir1) { FactoryBot.create(:dd) }
+  let!(:dir2) { FactoryBot.create(:dod) }
 
   scenario 'sucessfully view a dance_direction#show when entered directly' do
     visit dance_dance_direction_path(dir1.dance_id, dir1.id)

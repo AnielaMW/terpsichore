@@ -12,9 +12,9 @@ feature 'create a dance_comment from dance#show', %{
   # they are redirected and prompted to sign-in
   # User comment should be added without a page reload
 
-  let!(:anne) { FactoryGirl.create(:anne) }
-  let!(:dance) { FactoryGirl.create(:dance) }
-  let!(:comment_type) { FactoryGirl.create(:comment_type) }
+  let!(:anne) { FactoryBot.create(:anne) }
+  let!(:dance) { FactoryBot.create(:dance) }
+  let!(:comment_type) { FactoryBot.create(:comment_type) }
   new_dance_comment = { comment: "Really Great" }
 
   scenario 'authenticated user successfully create dance_comment

@@ -11,9 +11,9 @@ feature 'view moods#index', %{
   # The list should be sorted alphabetically by Title
   # The list should include the Name
 
-  let!(:mood1) { FactoryGirl.create(:mood, name: "Romantic") }
-  let!(:mood2) { FactoryGirl.create(:mood, name: "Dramatic") }
-  let!(:mood3) { FactoryGirl.create(:mood, name: "Flowing") }
+  let!(:mood1) { FactoryBot.create(:mood, name: "Romantic") }
+  let!(:mood2) { FactoryBot.create(:mood, name: "Dramatic") }
+  let!(:mood3) { FactoryBot.create(:mood, name: "Flowing") }
 
   scenario 'sucessfully view the moods#index' do
     visit moods_path

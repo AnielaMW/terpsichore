@@ -13,9 +13,9 @@ feature 'views users list', %{
   # * User cannot view the last_name, password, email of users
   # * click a link to thier user profile
 
-  let!(:anne) { FactoryGirl.create(:anne) }
-  let!(:will) { FactoryGirl.create(:anne, user_name: 'Will') }
-  let!(:fred) { FactoryGirl.create(:anne, user_name: 'Fred') }
+  let!(:anne) { FactoryBot.create(:anne) }
+  let!(:will) { FactoryBot.create(:anne, user_name: 'Will') }
+  let!(:fred) { FactoryBot.create(:anne, user_name: 'Fred') }
 
   scenario 'sucessfully view member list with authenticated user' do
     sign_in anne

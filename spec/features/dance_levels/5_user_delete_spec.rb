@@ -11,8 +11,8 @@ feature 'delete a dance_level', %{
   # If user is not signed-in, they cannot see the 'Delete' button
   # If user is not Admin, they cannot see the 'Delete' button
 
-  let!(:admin) { FactoryGirl.create(:admin) }
-  let!(:dance_level) { FactoryGirl.create(:dance_level) }
+  let!(:admin) { FactoryBot.create(:admin) }
+  let!(:dance_level) { FactoryBot.create(:dance_level) }
 
   scenario 'sucessfully delete a dance_level when admin user' do
     sign_in admin

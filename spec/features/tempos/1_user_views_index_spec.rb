@@ -11,9 +11,9 @@ feature 'view tempos#index', %{
   # The list should be sorted alphabetically by Name
   # The list should include the Name
 
-  let!(:tempo1) { FactoryGirl.create(:tempo, name: "Moderate") }
-  let!(:tempo2) { FactoryGirl.create(:tempo, name: "Fast") }
-  let!(:tempo3) { FactoryGirl.create(:tempo, name: "Slow") }
+  let!(:tempo1) { FactoryBot.create(:tempo, name: "Moderate") }
+  let!(:tempo2) { FactoryBot.create(:tempo, name: "Fast") }
+  let!(:tempo3) { FactoryBot.create(:tempo, name: "Slow") }
 
   scenario 'sucessfully view the tempos#index' do
     visit tempos_path

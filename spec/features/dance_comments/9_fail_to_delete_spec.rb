@@ -11,10 +11,10 @@ feature 'fail to delete a dance_comment', %{
   # If user is not signed-in, they cannot see the 'Delete' button
   # If user is not the creator, they cannot see the 'Delete' button
 
-  let!(:clay) { FactoryGirl.create(:anne) }
-  let!(:com1) { FactoryGirl.create(:dance_comment) }
-  let!(:com2) { FactoryGirl.create(:dance_comment, dance_id: com1.dance_id) }
-  let!(:comment3) { FactoryGirl.create(:dance_comment) }
+  let!(:clay) { FactoryBot.create(:anne) }
+  let!(:com1) { FactoryBot.create(:dance_comment) }
+  let!(:com2) { FactoryBot.create(:dance_comment, dance_id: com1.dance_id) }
+  let!(:comment3) { FactoryBot.create(:dance_comment) }
 
   scenario 'fail to see "Delete" button with unauthenticated user from
   dance_comment_path' do

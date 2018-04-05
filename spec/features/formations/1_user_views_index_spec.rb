@@ -11,9 +11,9 @@ feature 'view formations#index', %{
   # The list should be sorted alphabetically by Title
   # The list should include the Name
 
-  let!(:form1) { FactoryGirl.create(:formation, name: "2 Couple") }
-  let!(:form2) { FactoryGirl.create(:formation, name: "Scicilian Circle") }
-  let!(:form3) { FactoryGirl.create(:formation, name: "4 Couple") }
+  let!(:form1) { FactoryBot.create(:formation, name: "2 Couple") }
+  let!(:form2) { FactoryBot.create(:formation, name: "Scicilian Circle") }
+  let!(:form3) { FactoryBot.create(:formation, name: "4 Couple") }
 
   scenario 'sucessfully view the formations#index' do
     visit formations_path

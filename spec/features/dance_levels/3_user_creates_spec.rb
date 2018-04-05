@@ -10,10 +10,10 @@ feature 'create a dance_level', %{
   # User must povide Name and Desription
   # If user is not signed-in they cannot see the link to add new dance_levels.
 
-  let!(:admin) { FactoryGirl.create(:admin) }
-  let!(:dance) { FactoryGirl.create(:dance) }
+  let!(:admin) { FactoryBot.create(:admin) }
+  let!(:dance) { FactoryBot.create(:dance) }
   new_dance_level = { name: "6 Couple", description: "3 next to 3" }
-  let!(:anne) { FactoryGirl.create(:anne) }
+  let!(:anne) { FactoryBot.create(:anne) }
 
   scenario 'admin user successfully create dance_level
     with valid information' do

@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :meter do
     sequence(:name) { |n| "#{n}/16" }
   end

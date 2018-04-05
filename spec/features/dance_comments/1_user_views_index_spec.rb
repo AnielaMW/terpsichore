@@ -14,11 +14,11 @@ feature 'view dance comments', %{
   # The both lists should include the comment_type, user, and comment
   # The indexes list should include the dance.title
 
-  let!(:dance) { FactoryGirl.create(:dance) }
-  let!(:com1) { FactoryGirl.create(:dcom_comment, dance_id: dance.id) }
-  let!(:com2) { FactoryGirl.create(:dvar_comment, dance_id: dance.id) }
-  let!(:com3) { FactoryGirl.create(:dstyle_comment, dance_id: dance.id) }
-  let!(:com4) { FactoryGirl.create(:dance_comment) }
+  let!(:dance) { FactoryBot.create(:dance) }
+  let!(:com1) { FactoryBot.create(:dcom_comment, dance_id: dance.id) }
+  let!(:com2) { FactoryBot.create(:dvar_comment, dance_id: dance.id) }
+  let!(:com3) { FactoryBot.create(:dstyle_comment, dance_id: dance.id) }
+  let!(:com4) { FactoryBot.create(:dance_comment) }
 
   scenario 'sucessfully view the dance_comments for a given dance' do
     visit dance_path(dance)

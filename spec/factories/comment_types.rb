@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :comment_type do
     sequence(:name) { |n| "Comment #{n}" }
     description "Comment Description"

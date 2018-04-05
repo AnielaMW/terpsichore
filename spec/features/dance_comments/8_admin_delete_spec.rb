@@ -9,10 +9,10 @@ feature 'delete a dance_comment', %{
   # User cannot delete dance_comments unless user is signed-in
   # User cannot delete dance_comments unless they are the admin
 
-  let!(:lady_r) { FactoryGirl.create(:admin_user) }
-  let!(:com1) { FactoryGirl.create(:dance_comment) }
-  let!(:com2) { FactoryGirl.create(:dance_comment, dance_id: com1.dance_id) }
-  let!(:com3) { FactoryGirl.create(:dance_comment) }
+  let!(:lady_r) { FactoryBot.create(:admin_user) }
+  let!(:com1) { FactoryBot.create(:dance_comment) }
+  let!(:com2) { FactoryBot.create(:dance_comment, dance_id: com1.dance_id) }
+  let!(:com3) { FactoryBot.create(:dance_comment) }
 
   scenario 'admin sucessfully delete a dance_comment from dance_comment_path' do
     sign_in lady_r

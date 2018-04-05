@@ -12,8 +12,8 @@ feature 'view keys#show', %{
   # they should expect to see all details of a key
   # Details must include Name and Description
 
-  let!(:key) { FactoryGirl.create(:key) }
-  let!(:dance) { FactoryGirl.create(:dance, key_id: key.id) }
+  let!(:key) { FactoryBot.create(:key) }
+  let!(:dance) { FactoryBot.create(:dance, key_id: key.id) }
 
   scenario 'sucessfully view a key#show when entered directly' do
     visit key_path(key.id)
