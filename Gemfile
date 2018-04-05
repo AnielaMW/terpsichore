@@ -9,9 +9,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'devise'
 gem 'webpacker', '~> 2.0'
+gem 'coveralls', require: false
 
 group :test do
-  gem 'coveralls', require: false
   gem 'database_cleaner'
 end
 
