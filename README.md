@@ -11,11 +11,9 @@ Create a feature, fix an error, or help maintain this open source community that
 
 * To use the site, go to https://my-terpsichore.herokuapp.com
 
-* New Features
-  We have a number of features we would like to add and are working diligently to move these projects forward.
+* New Features - We have a number of features we would like to add and are working diligently to move these projects forward.
 
-* Updates and Changes
-  None to report at this time.
+* Updates and Changes - None to report at this time.
 
 * Ruby version
   2.4.1
